@@ -63,8 +63,6 @@ boton.addEventListener("click",()=>{
 
 })
 
-
-
 botonCasual.addEventListener("click",()=>{
     botonCasual.classList.replace("animate__backInUp","animate__backOutRight")
     boton_competitivo.classList.replace("animate__backInUp","animate__backOutDown")
@@ -172,7 +170,17 @@ botonIndividual.addEventListener("click",()=>{
             alerta.classList.add("alerta")
             alerta.innerHTML ="Por favor, introduzca un valor valido"
         }  else{
-            confirm(`El numero de jugadores es de ${resultado}, ¿estas seguro de que quieres continuar?`)
+            if(confirm(`El numero de jugadores es de ${resultado}, ¿estas seguro de que quieres continuar?`)){
+                inputNumeroDeJugadores.classList.replace("animate__backInUp","animate__backOutRight")
+                h2EligeNumeroDeJugadores.classList.replace("animate__backInDown","animate__backOutUp")
+                botonSiguiente.classList.replace("animate__backInUp","animate__backOutRight")
+                alerta.remove()
+                setTimeout(()=>{
+                    inputNumeroDeJugadores.remove()
+                    h2EligeNumeroDeJugadores.remove()
+                    botonSiguiente.remove()
+                },250)
+            }
         }
     })
 })
