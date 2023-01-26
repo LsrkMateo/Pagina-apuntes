@@ -374,10 +374,35 @@ a:visited{
     margin-top: 20%;
     border-radius: 20px;
 }
-.alerta_equipos{
+.alerta_equipos2{
     color: red;
     margin-top: 20px;
     position: absolute;
-    top: 25%;
-    right: 14%;
+    bottom: 21%;
+}
+.elije_numero_jugadores_por_equipo{
+    font-size: 40px;
+    font-weight: bold;
+    top: 40%;
+    margin-top: 20px;
+    position: absolute;
+}
+.input_numero_jugadores_por_equipo{
+    margin-top: 30px;
+    padding: 10px 0px;
+    font-size: 20px;
+    position: absolute;
+    top: 52%;
+    text-align: center;
+    border: none;
+    width: 80px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition-property: width;
+    transition-duration: .4s;
+}
+.input_numero_jugadores_por_equipo:focus{
+    width: 200px;
 }
