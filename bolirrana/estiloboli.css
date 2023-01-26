@@ -1,0 +1,312 @@
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif; 
+}
+html{
+    scroll-behavior: smooth;
+}
+.lista_contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(26, 26, 26);
+    width: 100%;
+    color: white;
+    align-items: center;
+    text-align: center;
+    font-size: large;
+    height: 10vh;
+}
+.lista_item{
+    font-family: monospace;
+    padding: 10px 50px;
+    border-color: rgba(255, 255, 255, 0);
+    transition-property: border-color, padding;
+    transition-duration: .6s;
+    user-select: none;
+}
+.lista_item:hover{
+    padding: 10px 80px;
+    border-radius: 80px;
+    border: #fff 2px solid;
+}
+a{
+    text-decoration: none;
+}
+a:link{
+    color: #fff;
+}
+a:visited{
+    color: #fff;
+}
+.bolirrana{
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.072);
+}
+.wave{
+    transform: rotate(200grad);
+    width: 100%;
+    height: 50vh;
+    filter: hue-rotate(230deg) brightness(120%);
+    position: absolute;
+}
+.wave2{
+    width: 100%;
+    height: 50vh;
+    filter: hue-rotate(230deg) brightness(120%);
+    position: absolute;
+    bottom: 0;
+}
+.h2-bolirrana{
+    position: relative;
+    color: rgb(53, 76, 0);
+    font-size: 90px;
+    text-decoration:solid 2px black;
+    -webkit-text-stroke: 1.5px black;
+}
+.contenedor-h2-bolirrana{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.contenedor-blur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blur{
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    transform: translateY(25%);
+    position: relative;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(8.3px);
+    backdrop-filter: blur(8.3px);
+}
+.h3-comojugar{
+    padding: 20px;
+}
+.parrafo-introduccion{
+    padding: 20px 60px;
+    font-size: 30px;
+}
+.boton-empezae{
+    font-size: 18px;
+    padding: 10px 40px;
+    margin: 30px;
+    border-radius: 20px;
+    background-color: rgb(157, 232, 6);
+    transition-property: padding, font-size, background-color;
+    transition-duration: .4s;
+}
+.boton-empezae:hover{
+    padding: 10px 80px;
+    font-size: 22px;
+    background-color: rgb(255, 230, 0);
+    
+}
+.animate__backOutDown{
+    animation: backOutDown;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+.animate__backOutDown{
+    animation: backOutDown;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+.animate__backOutUp{
+    animation: backOutUp;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+.animate__backInDown{
+    animation: backInDowm;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+.boton_casual{
+    min-width:30vw;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    top: 40%;
+    position: absolute;
+    font-size: 25px;
+    padding: 20px 90px;
+    border-radius: 20px;
+    transition: .4s;
+}
+.elije_modo{
+    font-size: 40px;
+    font-weight: bold;
+    top: 10%;
+    margin-top: 30px;
+    position: absolute;
+}
+.elije_modo2{
+    font-size: 40px;
+    font-weight: bold;
+    top: 10%;
+    margin-top: 30px;
+    position: absolute;
+}
+.animate__backInUp{
+    animation: backInUp;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
+.boton_competitivo{
+    min-width:30vw;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    top: 70%;
+    position: absolute;
+    font-size: 25px;
+    padding: 20px 90px;
+    border-radius: 20px;
+    transition: .4s;
+}
+.boton_casual:hover{
+    background-color: black;
+    color: #fff;
+}
+.boton_competitivo:hover{
+    background-color: black;
+    color: #fff;
+}
+.boton_competitivo:active{
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+}
+.boton_casual:active{
+    background-color: #fff;
+    color: black;
+}
+
+.boton_individual{
+    min-width:30vw;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    top: 35%;
+    position: absolute;
+    font-size: 25px;
+    padding: 20px 90px;
+    border-radius: 20px;
+    transition: .4s;
+}
+.boton_equipos{
+    min-width:30vw;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    top: 55%;
+    position: absolute;
+    font-size: 25px;
+    padding: 20px 90px;
+    border-radius: 20px;
+    transition: .4s;
+}
+.boton_equiposACiegas{
+    min-width:30vw;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    top: 75%;
+    position: absolute;
+    font-size: 25px;
+    padding: 20px 90px;
+    border-radius: 20px;
+    transition: .4s;
+}
+.boton_individual:hover{
+    background-color: black;
+    color: #fff;
+}
+.boton_equipos:hover{
+    background-color: black;
+    color: #fff;
+}
+.boton_equiposACiegas:hover{
+    background-color: black;
+    color: #fff;
+}
+.boton_individual:active{
+    background-color: #fff;
+    color: black;
+}
+.boton_equipos:active{
+    background-color: #fff;
+    color: black;
+}
+.boton_equiposACiegas:active{
+    background-color: #fff;
+    color: black;
+}
+.animate__backOutRight{
+    animation: backOutRight;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+}
+
+.input_numero_jugadores{
+    margin-top: 30px;
+    padding: 10px 0px;
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    width: 80px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition-property: width;
+    transition-duration: .4s;
+}
+.input_numero_jugadores:focus{
+    width: 300px;
+}
+.elije_numero_jugadores{
+    font-size: 40px;
+    font-weight: bold;
+    top: 27%;
+    margin-top: 30px;
+    position: absolute;
+}
+.boton_siguiente{
+    background-color: rgb(14, 58, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 40px;
+    position: absolute;
+    margin-top: 20%;
+    border-radius: 20px;
+    transition: .4s;
+}
+.boton_siguiente:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px 60px;
+    position: absolute;
+    margin-top: 20%;
+    border-radius: 20px;
+}
+
+.boton_siguiente:active{
+    background-color: rgb(14, 58, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 80px;
+    position: absolute;
+    margin-top: 20%;
+    border-radius: 20px;
+}
