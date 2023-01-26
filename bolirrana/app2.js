@@ -213,7 +213,7 @@ botonEquipos.addEventListener("click",()=>{
         document.querySelector(".blur").appendChild(h2EligeNumeroDeJugadores)
         h2EligeNumeroDeJugadores.classList.add("animate__backInDown")
         h2EligeNumeroDeJugadores.classList.add("elije_numero_jugadores_equipos")
-        h2EligeNumeroDeJugadores.innerHTML="Escriba el numero de jugadores: "
+        h2EligeNumeroDeJugadores.innerHTML="Escriba el numero de equipos: "
 
         document.querySelector(".blur").appendChild(h2EligeNumeroDeJugadoresPorEquipo)
         h2EligeNumeroDeJugadoresPorEquipo.classList.add("animate__backInDown")
@@ -239,14 +239,14 @@ botonEquipos.addEventListener("click",()=>{
                 resultado = parseInt(inputNumeroDeJugadores.value)
                 confirmacion1 = false
                 resultado2 = parseInt(input_numero_jugadores_por_equipo.value)
-                numeroDeEquipos = resultado / resultado2
-                if(isNaN(input_numero_jugadores_por_equipo.value) || input_numero_jugadores_por_equipo.value <= 0 || resultado2 > resultado){
+                numeroDeEquipos = resultado * resultado2
+                if(isNaN(input_numero_jugadores_por_equipo.value) || input_numero_jugadores_por_equipo.value <= 0){
                     document.querySelector(".blur").appendChild(alerta)
                     alerta.classList.add("alerta_equipos2")
-                    alerta.innerHTML="Por favor, completa los campos con valores validos, tambien ten en cuenta el numero de jugadores"
+                    alerta.innerHTML="Por favor, completa los campos con valores validos"
                 } else{
-                    if(confirm(`Confirmacion: El numero de jugadores es de ${resultado}`)){
-                        if(confirm(`Tambien, el numero de jugadores por equipo es de ${resultado2}, y se crearian ${numeroDeEquipos} equipo/s ¿estas seguro de continuar?`)){
+                    if(confirm(`Confirmacion: El numero de equipos son de ${resultado}`)){
+                        if(confirm(`Tambien, el numero de jugadores por equipo es de ${resultado2}, por lo tanto se nescecitan ${numeroDeEquipos} jugadores, ¿estas seguro de continuar?`)){
                             h2EligeNumeroDeJugadoresPorEquipo.classList.replace("animate__backInDown","animate__backOutUp")
                             h2EligeNumeroDeJugadores.classList.replace("animate__backInDown","animate__backOutUp")
                             inputNumeroDeJugadores.classList.replace("animate__backInUp","animate__backOutDown")
@@ -262,7 +262,7 @@ botonEquipos.addEventListener("click",()=>{
                                 botonSiguiente.remove()
 
                                 //crear la tabla de los jugadores con su respectivo equipo
-                            })
+                            },250)
                         }
                     }
                 }
