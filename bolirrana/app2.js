@@ -253,6 +253,16 @@ botonEquipos.addEventListener("click",()=>{
                             input_numero_jugadores_por_equipo.classList.replace("animate__backInUp","animate__backOutDown")
                             botonSiguiente.classList.replace("animate__backInUp","animate__backOutRight")
                             alerta.remove()
+
+                            setTimeout(()=>{
+                                h2EligeNumeroDeJugadoresPorEquipo.remove()
+                                h2EligeNumeroDeJugadores.remove()
+                                inputNumeroDeJugadores.remove()
+                                input_numero_jugadores_por_equipo.remove()
+                                botonSiguiente.remove()
+
+                                //crear la tabla de los jugadores con su respectivo equipo
+                            })
                         }
                     }
                 }
