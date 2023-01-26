@@ -16,6 +16,12 @@ const escogerModoDeJuegoH2 = document.createElement("h2");
 const botonCasual = document.createElement("button")
 const boton_competitivo = document.createElement("button")
 
+// Que es esto?
+
+const queEsCasual = document.createElement("p")
+const queEsCompetitivo = document.createElement("p")
+
+
 // Modo de agrupacion:
 
 const divOpciones = document.createElement("div")
@@ -46,13 +52,13 @@ boton.addEventListener("click",()=>{
     parrafo.classList.add("animate__backOutDown")
     comoJugar.classList.add("animate__backOutDown")
     boton.classList.add("animate__backOutDown")
-
+    
     setTimeout(()=>{
         titulo.remove()
         parrafo.remove()
         comoJugar.remove()
         boton.remove()    
-        
+                
         document.querySelector(".blur").appendChild(escogerModoDeJuegoH2)
         escogerModoDeJuegoH2.classList.add("animate__backInDown")
         escogerModoDeJuegoH2.classList.add("elije_modo")
@@ -65,10 +71,18 @@ boton.addEventListener("click",()=>{
                 botonCasual.classList.add("boton_casual")
                 botonCasual.innerHTML="Casual 😎"
 
+                document.querySelector(".blur").appendChild(queEsCasual)
+                queEsCasual.classList.add("que_es_casual")
+                queEsCasual.innerHTML = "En el modo casual, todos los equipos juegan a la vez, solo hay 1 ronda"
+
                 document.querySelector(".blur").appendChild(boton_competitivo)
                 boton_competitivo.classList.add("animate__backInUp")
                 boton_competitivo.classList.add("boton_competitivo")
                 boton_competitivo.innerHTML="Competitivo 🏆"
+
+                document.querySelector(".blur").appendChild(queEsCompetitivo)
+                queEsCompetitivo.classList.add("que_es_competitivo")
+                queEsCompetitivo.innerHTML = `Modo competitivo: En cada ronda se disputaran 2 equipos, el ganador, pasara a la siguiente ronda. <br> Las rondas se definen dependiendo de la cantidad de equipos que haya`
         },900)
     }, 250) 
 
@@ -111,8 +125,9 @@ botonCasual.addEventListener("click",()=>{
 
 })
 
+
 boton_competitivo.addEventListener("click",()=>{
-    botonCasual.classList.replace("animate__backInUp","animate__backOutDown")
+    botonCasual.classList.replace("animate__backInUp","animate__backOutRight")
     boton_competitivo.classList.replace("animate__backInUp","animate__backOutDown")
     escogerModoDeJuegoH2.classList.replace("animate__backInDown","animate__backOutUp")
     
@@ -123,23 +138,24 @@ boton_competitivo.addEventListener("click",()=>{
 
         document.querySelector(".blur").appendChild(escogerModoDeGruposH2)
         escogerModoDeGruposH2.classList.add("animate__backInDown")
-        escogerModoDeGruposH2.classList.add("elije_modo")
+        escogerModoDeGruposH2.classList.add("elije_modo2")
         escogerModoDeGruposH2.innerHTML="Escoge el modo de agrupacion:"
         setTimeout(()=>{
-            document.querySelector(".blur").appendChild(botonIndividual)
+            
+            blur.appendChild(botonIndividual)
             botonIndividual.classList.add("animate__backInUp")
             botonIndividual.classList.add("boton_individual")
             botonIndividual.innerHTML="Individual 👤"
 
-            document.querySelector(".blur").appendChild(botonEquipos)
+            blur.appendChild(botonEquipos)
             botonEquipos.classList.add("animate__backInUp")
             botonEquipos.classList.add("boton_equipos")
             botonEquipos.innerHTML="Equipos 👥"
 
-            document.querySelector(".blur").appendChild(botonEquiposACiegas)
+            blur.appendChild(botonEquiposACiegas)
             botonEquiposACiegas.classList.add("animate__backInUp")
-            botonEquiposACiegas.classList.add("boton_equipos")
-            botonEquiposACiegas.innerHTML="Equipos 👥"
+            botonEquiposACiegas.classList.add("boton_equiposACiegas")
+            botonEquiposACiegas.innerHTML="Equipos a ciegas 👥❓"
         },800)
     },250)
 
@@ -270,3 +286,4 @@ botonEquipos.addEventListener("click",()=>{
         },800)
     },250)
 })
+
