@@ -315,3 +315,69 @@ a:visited{
     margin-top: 20px;
 
 }
+.elije_numero_jugadores_equipos{
+    font-size: 40px;
+    font-weight: bold;
+    top: 10%;
+    margin-top: 20px;
+    position: absolute;
+}
+.input_numero_jugadores_equipos{
+    margin-top: 30px;
+    padding: 10px 0px;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    border: none;
+    width: 80px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition-property: width;
+    transition-duration: .4s;
+}
+
+.input_numero_jugadores_equipos:focus{
+    width: 200px;
+}
+.boton_siguiente_equipos{
+    background-color: rgb(14, 58, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 40px;
+    position: absolute;
+    bottom: 5%;
+    margin-top: 20%;
+    border-radius: 20px;
+    transition: .4s;
+}
+.boton_siguiente_equipos:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 11px 60px;
+    position: absolute;
+    margin-top: 20%;
+    border-radius: 20px;
+}
+.boton_siguiente_equipos:active{
+    background-color: rgb(14, 58, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 80px;
+    position: absolute;
+    margin-top: 20%;
+    border-radius: 20px;
+}
+.alerta_equipos{
+    color: red;
+    margin-top: 20px;
+    position: absolute;
+    top: 25%;
+    right: 14%;
+}

@@ -184,3 +184,56 @@ botonIndividual.addEventListener("click",()=>{
         }
     })
 })
+
+botonEquipos.addEventListener("click",()=>{
+    botonIndividual.classList.replace("animate__backInUp","animate__backOutRight")
+    botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
+    botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
+    escogerModoDeGruposH2.classList.replace("animate__backInDown","animate__backOutUp")
+
+    setTimeout(()=>{
+        botonEquipos.remove()
+        botonIndividual.remove()
+        botonEquiposACiegas.remove()
+        escogerModoDeGruposH2.remove()
+
+        document.querySelector(".blur").appendChild(h2EligeNumeroDeJugadores)
+        h2EligeNumeroDeJugadores.classList.add("animate__backInDown")
+        h2EligeNumeroDeJugadores.classList.add("elije_numero_jugadores_equipos")
+        h2EligeNumeroDeJugadores.innerHTML="Escriba el numero de jugadores: "
+
+        setTimeout(()=>{
+            document.querySelector(".blur").appendChild(inputNumeroDeJugadores)
+            inputNumeroDeJugadores.classList.add("animate__backInUp")
+            inputNumeroDeJugadores.classList.add("input_numero_jugadores_equipos")
+
+            document.querySelector(".blur").appendChild(botonSiguiente)
+            botonSiguiente.classList.add("animate__backInUp")
+            botonSiguiente.classList.add("boton_siguiente_equipos")
+            
+            botonSiguiente.innerHTML="Siguiente: "
+
+            botonSiguiente.addEventListener("click",()=>{
+                resultado = parseInt(inputNumeroDeJugadores.value)
+                if(isNaN(inputNumeroDeJugadores.value) || inputNumeroDeJugadores.value <= 0){
+                    noEsNumero = true
+                    document.querySelector(".blur").appendChild(alerta)
+                    alerta.classList.add("alerta_equipos")
+                    alerta.innerHTML ="Por favor, introduzca un valor valido"
+                }  else{
+                    if(confirm(`El numero de jugadores es de ${resultado}, ¿estas seguro de que quieres continuar?`)){
+                        inputNumeroDeJugadores.classList.replace("animate__backInUp","animate__backOutRight")
+                        h2EligeNumeroDeJugadores.classList.replace("animate__backInDown","animate__backOutUp")
+                        botonSiguiente.classList.replace("animate__backInUp","animate__backOutRight")
+                        alerta.remove()
+                        setTimeout(()=>{
+                            inputNumeroDeJugadores.remove()
+                            h2EligeNumeroDeJugadores.remove()
+                            botonSiguiente.remove()
+                        },250)
+                    }
+                }
+            })
+        },800)
+    },250)
+})
