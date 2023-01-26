@@ -27,6 +27,8 @@ const h2EligeNumeroDeJugadores = document.createElement("h2")
 const inputNumeroDeJugadores = document.createElement("input")
 const botonSiguiente = document.createElement("button")
 
+const alerta = document.createElement("p")
+
 
 boton.addEventListener("click",()=>{
     titulo.classList.add("animate__backOutUp")
@@ -163,6 +165,16 @@ botonIndividual.addEventListener("click",()=>{
         },900)
     },250)
     botonSiguiente.addEventListener("click",()=>{
-        alert("hola como va")
+        resultado = parseInt(inputNumeroDeJugadores.value)
+        if(isNaN(inputNumeroDeJugadores.value)){
+            document.querySelector(".blur").appendChild(alerta)
+            alerta.classList.add("alerta")
+            alerta.innerHTML ="Por favor, introduzca un valor valido"
+        } else{
+            confirm(`El numero de jugadores es de ${resultado}, ¿estas seguro de que quieres continuar?`)
+        }
+        if (inputNumeroDeJugadores.value <= 0){
+            alerta.innerHTML = "Por favor, introduce un numero mayor a cero"
+        }
     })
 })

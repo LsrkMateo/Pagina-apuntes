@@ -269,12 +269,12 @@ a:visited{
     transition-duration: .4s;
 }
 .input_numero_jugadores:focus{
-    width: 300px;
+    width: 200px;
 }
 .elije_numero_jugadores{
     font-size: 40px;
     font-weight: bold;
-    top: 27%;
+    top: 25%;
     margin-top: 30px;
     position: absolute;
 }
@@ -309,4 +309,9 @@ a:visited{
     position: absolute;
     margin-top: 20%;
     border-radius: 20px;
+}
+.alerta{
+    color: red;
+    margin-top: 20px;
+
 }
