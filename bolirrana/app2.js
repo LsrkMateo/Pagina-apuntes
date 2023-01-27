@@ -61,7 +61,11 @@ const h2_puntos_a_alcanzar = document.createElement("h2")
 const h3_mensaje_puntso = document.createElement("h3")
 const input_puntos = document.createElement("input")
 
-// Alerta:
+// Alerta nombre de jugadores:
+
+const alertaJugadores = document.createElement("p")
+
+// Alerta numero de jugadores:
 
 const alerta = document.createElement("p")
 
@@ -301,16 +305,53 @@ botonIndividual.addEventListener("click",()=>{
                 h2_puntos_a_alcanzar.classList.add("animate__backInDown")
                 h2_puntos_a_alcanzar.classList.add("h2_puntos_a_alcanzar")
                 h2_puntos_a_alcanzar.innerHTML = "Puntos a alcanzar"
+
+                document.querySelector(".blurmejora").appendChild(h3_mensaje_puntso)
+                h3_mensaje_puntso.classList.add("animate__backInDown")
+                h3_mensaje_puntso.classList.add("h3_mensaje_puntso")
+                h3_mensaje_puntso.innerHTML = `Escribe el numero de puntos a jugar, el jugador que primero alcanze la meta de puntos gana`
+                
+                if(input_puntos)
+
+                var items = []
+
                 setTimeout(()=>{
                     for(i=0;i<resultado;i++){
-                        const item = document.createElement("input")
+                        var item = document.createElement("input")
+                        
                         item.classList.add("animate__backInUp")
                         item.classList.add("items_individualmodo-casual_entre1y3")
                         item.placeholder = `Jugador ${i+1}`
                         contenedorFlex.classList.replace("contenedor_flex","contenedorFlex1-3")
                         fragmentoFlex.appendChild(item)
+
+                        items.push(item.value)
+                        console.log(items)
                     }
+                    items.push(item.value)
+                    
+                    console.log(items)
+
                     contenedorFlex.appendChild(fragmentoFlex)
+
+                    document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
+                    boton_empezar_juego.classList.add("animate__backInUp")
+                    boton_empezar_juego.classList.add("botonEmpezarJuego")
+                    boton_empezar_juego.innerHTML = "Siguiente"
+
+                    document.querySelector(".blurmejora").appendChild(input_puntos)
+                    input_puntos.classList.add("animate__backInUp")
+                    input_puntos.classList.add("input_puntos")
+                    input_puntos.placeholder = "puntos"
+
+                    boton_empezar_juego.addEventListener("click",()=>{
+                        for(i=0;i<resultado;i++){
+                            items.push(item.value)
+                        }
+                        console.log(items)
+                    })
+
+                    
                 },800)
                     
                 
@@ -519,5 +560,7 @@ botonEquiposACiegas.addEventListener("click",()=>{
         },800)
     },250)
 })
+
+
 
 console.log(textoComprobador)

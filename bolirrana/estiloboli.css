@@ -495,6 +495,16 @@ a:visited{
     position: absolute;
     top: 28%;
 }
+.h2_puntos_a_alcanzar{
+    position: absolute;
+    top: 43%;
+    font-size: 45px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.294);
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.408);
+}
 .items_individualmodo-casual_entre1y3{
     background-color: #fff;
     color: black;
@@ -508,6 +518,15 @@ a:visited{
     text-align: center;
     font-size: 22px;
 }
+.h3_mensaje_puntso{
+    position: absolute;
+    top: 56%;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.408);
+}
 .items_individualmodo-casual_entre1y3::placeholder{
     text-align: center;
     font-size: 20px
@@ -515,6 +534,19 @@ a:visited{
 .items_individualmodo-casual::placeholder{
     text-align: center;
     font-size: 20px
+}
+.input_puntos{
+    background-color: #fff;
+    color: black;
+    border: 2px solid black;
+    padding: 7px 10px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 29%;
+    min-width: 10%;
+    max-width: 30%;
+    text-align: center;
+    font-size: 22px;
 }
 .blurmejora{
     height: 90vh;
