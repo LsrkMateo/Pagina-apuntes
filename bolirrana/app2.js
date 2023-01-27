@@ -1,3 +1,4 @@
+var textoComprobador = "inicio"
 
 const contenedorBlur = document.querySelector(".contenedor-blur")
 
@@ -24,7 +25,6 @@ const queEsCompetitivo = document.createElement("p")
 const queEsIndividual = document.createElement("p")
 const queEsEquipos = document.createElement("p")
 const queEsEquiposACiegas = document.createElement("p")
-
 
 // Modo de agrupacion:
 
@@ -95,6 +95,9 @@ boton.addEventListener("click",()=>{
 // Botones:
 
 botonCasual.addEventListener("click",()=>{
+    textoComprobador += "casual"                     
+    console.log(textoComprobador)
+
     botonCasual.classList.replace("animate__backInUp","animate__backOutRight")
     boton_competitivo.classList.replace("animate__backInUp","animate__backOutDown")
     escogerModoDeJuegoH2.classList.replace("animate__backInDown","animate__backOutUp")
@@ -142,6 +145,9 @@ botonCasual.addEventListener("click",()=>{
 })
 
 boton_competitivo.addEventListener("click",()=>{
+    textoComprobador += "competitivo"
+    console.log(textoComprobador)
+
     botonCasual.classList.replace("animate__backInUp","animate__backOutRight")
     boton_competitivo.classList.replace("animate__backInUp","animate__backOutDown")
     escogerModoDeJuegoH2.classList.replace("animate__backInDown","animate__backOutUp")
@@ -190,6 +196,9 @@ boton_competitivo.addEventListener("click",()=>{
 })
 
 botonIndividual.addEventListener("click",()=>{
+    textoComprobador +="individual"
+    console.log(textoComprobador)
+    
     botonIndividual.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
@@ -243,6 +252,9 @@ botonIndividual.addEventListener("click",()=>{
 })
 
 botonEquipos.addEventListener("click",()=>{
+    textoComprobador +="equipos"
+    console.log(textoComprobador)
+    
     botonIndividual.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
@@ -316,6 +328,9 @@ botonEquipos.addEventListener("click",()=>{
 })
 
 botonEquiposACiegas.addEventListener("click",()=>{
+    textoComprobador += "equiposaciegas"
+    console.log(textoComprobador)
+    
     botonIndividual.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
@@ -387,3 +402,5 @@ botonEquiposACiegas.addEventListener("click",()=>{
         },800)
     },250)
 })
+
+console.log(textoComprobador)
