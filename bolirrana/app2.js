@@ -1,4 +1,10 @@
 var textoComprobador = "inicio"
+var iniciocasualindividual = false
+var iniciocasualequipos = false
+var iniciocasualequiposaciegas = false
+var iniciocompetitivoindividual = false
+var iniciocompetitivoequipos = false
+var iniciocompetitivoequiposaciegas = false
 
 const contenedorBlur = document.querySelector(".contenedor-blur")
 
@@ -198,6 +204,15 @@ boton_competitivo.addEventListener("click",()=>{
 botonIndividual.addEventListener("click",()=>{
     textoComprobador +="individual"
     console.log(textoComprobador)
+
+    if(textoComprobador === "iniciocasualindividual"){
+        iniciocasualindividual = true
+        alert(iniciocasualindividual)
+    }
+    if(textoComprobador === "iniciocompetitivoindividual"){
+        iniciocompetitivoindividual = true
+        alert(iniciocompetitivoindividual)
+    }
     
     botonIndividual.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutDown")
@@ -254,6 +269,16 @@ botonIndividual.addEventListener("click",()=>{
 botonEquipos.addEventListener("click",()=>{
     textoComprobador +="equipos"
     console.log(textoComprobador)
+
+    if(textoComprobador === "iniciocasualequipos"){
+        iniciocasualequipos = true
+        alert(iniciocasualequipos)
+    }
+
+    if(textoComprobador === "iniciocompetitivoequipos"){
+        iniciocompetitivoequipos = true
+        alert(iniciocompetitivoequipos)
+    }
     
     botonIndividual.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
@@ -330,7 +355,16 @@ botonEquipos.addEventListener("click",()=>{
 botonEquiposACiegas.addEventListener("click",()=>{
     textoComprobador += "equiposaciegas"
     console.log(textoComprobador)
-    
+
+    if(textoComprobador === "iniciocasualequiposaciegas"){
+        iniciocasualequiposaciegas = true
+        alert(iniciocasualequiposaciegas)
+    }
+    if(textoComprobador === "iniciocompetitivoequiposaciegas"){
+        iniciocompetitivoequiposaciegas = true
+        alert(iniciocompetitivoequiposaciegas)
+    }
+
     botonIndividual.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
