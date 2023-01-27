@@ -255,6 +255,7 @@ botonIndividual.addEventListener("click",()=>{
                 inputNumeroDeJugadores.classList.replace("animate__backInUp","animate__backOutRight")
                 h2EligeNumeroDeJugadores.classList.replace("animate__backInDown","animate__backOutUp")
                 botonSiguiente.classList.replace("animate__backInUp","animate__backOutRight")
+                var seguros = true
                 alerta.remove()
                 setTimeout(()=>{
                     inputNumeroDeJugadores.remove()
@@ -262,6 +263,24 @@ botonIndividual.addEventListener("click",()=>{
                     botonSiguiente.remove()
                 },250)
             }
+        }
+        if(seguros == true){
+
+            const contenedorFlex = document.createElement("div")
+            contenedorFlex.classList.add("contenedor_flex")
+            blur.appendChild(contenedorFlex)
+            blur.classList.replace("blur","blurmejora")
+            
+            const fragmentoFlex = document.createDocumentFragment();
+
+            for(i=0; i<resultado; i++){
+                const item = document.createElement("div")
+                item.innerHTML = `este es el item ${i+1} de la lista`
+                item.classList.add("items_individualmodo-casual")
+                fragmentoFlex.appendChild(item)
+                console.log(item)
+            }
+            contenedorFlex.appendChild(fragmentoFlex)
         }
     })
 })
