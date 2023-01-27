@@ -21,6 +21,10 @@ const boton_competitivo = document.createElement("button")
 const queEsCasual = document.createElement("p")
 const queEsCompetitivo = document.createElement("p")
 
+const queEsIndividual = document.createElement("p")
+const queEsEquipos = document.createElement("p")
+const queEsEquiposACiegas = document.createElement("p")
+
 
 // Modo de agrupacion:
 
@@ -73,7 +77,7 @@ boton.addEventListener("click",()=>{
 
                 document.querySelector(".blur").appendChild(queEsCasual)
                 queEsCasual.classList.add("que_es_casual")
-                queEsCasual.innerHTML = "En el modo casual, todos los equipos juegan a la vez, solo hay 1 ronda"
+                queEsCasual.innerHTML = "Modo casual: todos los equipos juegan a la vez, solo hay 1 ronda"
 
                 document.querySelector(".blur").appendChild(boton_competitivo)
                 boton_competitivo.classList.add("animate__backInUp")
@@ -111,20 +115,31 @@ botonCasual.addEventListener("click",()=>{
             botonIndividual.classList.add("boton_individual")
             botonIndividual.innerHTML="Individual 👤"
 
+            blur.appendChild(queEsIndividual)
+            queEsIndividual.classList.add("que_es_individual")
+            queEsIndividual.innerHTML = "Individual: modo todos contra todos, gana la persona que primero alcanze la meta de puntos"
+
             blur.appendChild(botonEquipos)
             botonEquipos.classList.add("animate__backInUp")
             botonEquipos.classList.add("boton_equipos")
             botonEquipos.innerHTML="Equipos 👥"
 
+            blur.appendChild(queEsEquipos)
+            queEsEquipos.classList.add("que_es_equipos")
+            queEsEquipos.innerHTML = "Equipos: gana el equipo que consiga primero la meta de puntos"
+
             blur.appendChild(botonEquiposACiegas)
             botonEquiposACiegas.classList.add("animate__backInUp")
             botonEquiposACiegas.classList.add("boton_equiposACiegas")
             botonEquiposACiegas.innerHTML="Equipos a ciegas 👥❓"
+
+            blur.appendChild(queEsEquiposACiegas)
+            queEsEquiposACiegas.classList.add("que_es_equipos_a_ciegas")
+            queEsEquiposACiegas.innerHTML = "Equipos a ciegas: moto incognito, nadie sabe en que equipo esta, gana el equipo que primero alcanze la meta de puntos"
         },800)
     },250)
 
 })
-
 
 boton_competitivo.addEventListener("click",()=>{
     botonCasual.classList.replace("animate__backInUp","animate__backOutRight")
@@ -146,16 +161,29 @@ boton_competitivo.addEventListener("click",()=>{
             botonIndividual.classList.add("animate__backInUp")
             botonIndividual.classList.add("boton_individual")
             botonIndividual.innerHTML="Individual 👤"
+            
+            blur.appendChild(queEsIndividual)
+            queEsIndividual.classList.add("que_es_individual")
+            queEsIndividual.innerHTML = "Individual: modo todos contra todos, gana la persona que primero alcanze la meta de puntos"
 
             blur.appendChild(botonEquipos)
             botonEquipos.classList.add("animate__backInUp")
             botonEquipos.classList.add("boton_equipos")
             botonEquipos.innerHTML="Equipos 👥"
 
+            blur.appendChild(queEsEquipos)
+            queEsEquipos.classList.add("que_es_equipos")
+            queEsEquipos.innerHTML = "Equipos: gana el equipo que consiga primero la meta de puntos"
+
             blur.appendChild(botonEquiposACiegas)
             botonEquiposACiegas.classList.add("animate__backInUp")
             botonEquiposACiegas.classList.add("boton_equiposACiegas")
             botonEquiposACiegas.innerHTML="Equipos a ciegas 👥❓"
+
+            blur.appendChild(queEsEquiposACiegas)
+            queEsEquiposACiegas.classList.add("que_es_equipos_a_ciegas")
+            queEsEquiposACiegas.innerHTML = "Equipos a ciegas: moto incognito, nadie sabe en que equipo esta, gana el equipo que primero alcanze la meta de puntos"
+
         },800)
     },250)
 
@@ -287,3 +315,75 @@ botonEquipos.addEventListener("click",()=>{
     },250)
 })
 
+botonEquiposACiegas.addEventListener("click",()=>{
+    botonIndividual.classList.replace("animate__backInUp","animate__backOutDown")
+    botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
+    botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
+    escogerModoDeGruposH2.classList.replace("animate__backInDown","animate__backOutUp")
+
+    setTimeout(()=>{
+        botonEquipos.remove()
+        botonIndividual.remove()
+        botonEquiposACiegas.remove()
+        escogerModoDeGruposH2.remove()
+
+        document.querySelector(".blur").appendChild(h2EligeNumeroDeJugadores)
+        h2EligeNumeroDeJugadores.classList.add("animate__backInDown")
+        h2EligeNumeroDeJugadores.classList.add("elije_numero_jugadores_equipos")
+        h2EligeNumeroDeJugadores.innerHTML="Escriba el numero de equipos: "
+
+        document.querySelector(".blur").appendChild(h2EligeNumeroDeJugadoresPorEquipo)
+        h2EligeNumeroDeJugadoresPorEquipo.classList.add("animate__backInDown")
+        h2EligeNumeroDeJugadoresPorEquipo.classList.add("elije_numero_jugadores_por_equipo")
+        h2EligeNumeroDeJugadoresPorEquipo.innerHTML="Escriba el numero de jugadores por equipo: "
+
+        setTimeout(()=>{
+            document.querySelector(".blur").appendChild(inputNumeroDeJugadores)
+            inputNumeroDeJugadores.classList.add("animate__backInUp")
+            inputNumeroDeJugadores.classList.add("input_numero_jugadores_equipos")
+
+            document.querySelector(".blur").appendChild(input_numero_jugadores_por_equipo)
+            input_numero_jugadores_por_equipo.classList.add("animate__backInUp")
+            input_numero_jugadores_por_equipo.classList.add("input_numero_jugadores_por_equipo")
+
+            document.querySelector(".blur").appendChild(botonSiguiente)
+            botonSiguiente.classList.add("animate__backInUp")
+            botonSiguiente.classList.add("boton_siguiente_equipos")
+            
+            botonSiguiente.innerHTML="Siguiente: "
+
+            botonSiguiente.addEventListener("click",()=>{
+                resultado = parseInt(inputNumeroDeJugadores.value)
+                confirmacion1 = false
+                resultado2 = parseInt(input_numero_jugadores_por_equipo.value)
+                numeroDeEquipos = resultado * resultado2
+                if(isNaN(input_numero_jugadores_por_equipo.value) || input_numero_jugadores_por_equipo.value <= 0){
+                    document.querySelector(".blur").appendChild(alerta)
+                    alerta.classList.add("alerta_equipos2")
+                    alerta.innerHTML="Por favor, completa los campos con valores validos"
+                } else{
+                    if(confirm(`Confirmacion: El numero de equipos son de ${resultado}`)){
+                        if(confirm(`Tambien, el numero de jugadores por equipo es de ${resultado2}, por lo tanto se nescecitan ${numeroDeEquipos} jugadores, ¿estas seguro de continuar?`)){
+                            h2EligeNumeroDeJugadoresPorEquipo.classList.replace("animate__backInDown","animate__backOutUp")
+                            h2EligeNumeroDeJugadores.classList.replace("animate__backInDown","animate__backOutUp")
+                            inputNumeroDeJugadores.classList.replace("animate__backInUp","animate__backOutDown")
+                            input_numero_jugadores_por_equipo.classList.replace("animate__backInUp","animate__backOutDown")
+                            botonSiguiente.classList.replace("animate__backInUp","animate__backOutRight")
+                            alerta.remove()
+
+                            setTimeout(()=>{
+                                h2EligeNumeroDeJugadoresPorEquipo.remove()
+                                h2EligeNumeroDeJugadores.remove()
+                                inputNumeroDeJugadores.remove()
+                                input_numero_jugadores_por_equipo.remove()
+                                botonSiguiente.remove()
+
+                                //crear la tabla de los jugadores con su respectivo equipo
+                            },250)
+                        }
+                    }
+                }
+            })
+        },800)
+    },250)
+})
