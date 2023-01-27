@@ -602,3 +602,13 @@ a:visited{
     color: rgb(0, 70, 8);
     width: 30%;
 }
+
+.jugador_1{
+    background-color: black;
+}
+.jugador_0{
+    background-color: aqua;
+}
+.jugador_2{
+    background-color: red;
+}

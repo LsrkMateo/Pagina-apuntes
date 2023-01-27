@@ -313,25 +313,20 @@ botonIndividual.addEventListener("click",()=>{
                 
                 if(input_puntos)
 
-                var items = []
+                items = []
 
                 setTimeout(()=>{
                     for(i=0;i<resultado;i++){
-                        var item = document.createElement("input")
+                        var item =document.createElement("input")
                         
                         item.classList.add("animate__backInUp")
                         item.classList.add("items_individualmodo-casual_entre1y3")
+                        item.classList.add(`jugador_${i}`)
                         item.placeholder = `Jugador ${i+1}`
                         contenedorFlex.classList.replace("contenedor_flex","contenedorFlex1-3")
-                        fragmentoFlex.appendChild(item)
-
-                        items.push(item.value)
-                        console.log(items)
+                        fragmentoFlex.appendChild(item)                       
                     }
-                    items.push(item.value)
                     
-                    console.log(items)
-
                     contenedorFlex.appendChild(fragmentoFlex)
 
                     document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
@@ -346,9 +341,9 @@ botonIndividual.addEventListener("click",()=>{
 
                     boton_empezar_juego.addEventListener("click",()=>{
                         for(i=0;i<resultado;i++){
-                            items.push(item.value)
+                            hola = toString(document.querySelector(`jugador_${i}`))
+                            console.log(hola)
                         }
-                        console.log(items)
                     })
 
                     
