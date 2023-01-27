@@ -468,9 +468,9 @@ a:visited{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    position: absolute;
+    align-content: center;
+    align-items: center;
     text-align: center;
-    top: 28.5%;
 }
 .items_individualmodo-casual{
     background-color: #fff;
@@ -481,6 +481,19 @@ a:visited{
     border-radius: 20px;
     min-width: 24%;
     max-width: 30%;
+    text-align: center;
+    font-size: 22px;
+}
+.items_individualmodo-casual1{
+    background-color: #fff;
+    color: rgb(0, 0, 0);
+    border: 2px solid black;
+    margin: 20px 10px;
+    padding: 10px 50px;
+    border-radius: 20px;
+    min-width: 30%;
+    position: absolute;
+    top: 28%;
     text-align: center;
     font-size: 22px;
 }

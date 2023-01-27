@@ -268,19 +268,20 @@ botonIndividual.addEventListener("click",()=>{
             }
         }
         if(seguros == true){
+        
             if(textoComprobador === "iniciocasualindividual"){   // casual e individual
                 const contenedorFlex = document.createElement("div")
                 contenedorFlex.classList.add("contenedor_flex")
                 blur.appendChild(contenedorFlex)
                 blur.classList.replace("blur","blurmejora")
-    
+                const fragmentoFlex = document.createDocumentFragment();
+
                 queEsCasual.remove()
                 queEsCompetitivo.remove()
                 queEsIndividual.remove()
                 queEsEquipos.remove()
                 queEsEquiposACiegas.remove()
                 
-                const fragmentoFlex = document.createDocumentFragment();
     
                 document.querySelector(".blurmejora").appendChild(h2_Jugadores)
                 h2_Jugadores.classList.add("animate__backInDown")
@@ -291,20 +292,39 @@ botonIndividual.addEventListener("click",()=>{
                 h3_jugadores_aviso.classList.add("animate__backInDown")
                 h3_jugadores_aviso.classList.add("h3_jugadores_aviso")
                 h3_jugadores_aviso.innerHTML = "Modifica el nombre de los jugadores a tu gusto seleccionando el cuadro"
-    
-                document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
-                boton_empezar_juego.classList.add("animate__backInUp")
-                boton_empezar_juego.classList.add("botonEmpezarJuego")
-                boton_empezar_juego.innerHTML = "Empezar a jugar"
-                for(i=0; i<resultado; i++){
+                
+                setTimeout(()=>{
+                    document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
+                    boton_empezar_juego.classList.add("animate__backInUp")
+                    boton_empezar_juego.classList.add("botonEmpezarJuego")
+                    boton_empezar_juego.innerHTML = "Siguiente"
+
+                    for(i=0; i<resultado; i++){
+
                     const item = document.createElement("input")
                     item.placeholder = `Jugador ${i+1}`
                     item.classList.add("animate__backInUp")
                     item.classList.add("items_individualmodo-casual")
                     fragmentoFlex.appendChild(item)
+                    if(resultado == 1){
+                        const h2_puntaje_a_jugar = document.createElement("h2")
+                        document.querySelector(".blurmejora").appendChild(h2_puntaje_a_jugar)
+                        h2_puntaje_a_jugar.classList.add("animate__backInDown")
+                        h2_puntaje_a_jugar.classList.add("h2_puntaje_a_jugar")
+                        h2_puntaje_a_jugar.innerHTML = "Escriba el puntaje a jugar: "
+
+                        item.classList.add("items_individualmodo-casual1")
+                        h2_Jugadores.innerHTML = "JUGADOR"
+                        h3_jugadores_aviso.innerHTML = "Modifica el nombre del jugador a tu gusto seleccionando el cuadro"
+                    }
                     console.log(item)
+                    contenedorFlex.appendChild(fragmentoFlex)
                 }
-                contenedorFlex.appendChild(fragmentoFlex)
+                
+                },800)
+
+
+                
             }
         }
     })
