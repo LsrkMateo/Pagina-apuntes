@@ -57,6 +57,10 @@ const h2_Jugadores = document.createElement("h2")
 const h3_jugadores_aviso = document.createElement("h3")
 const boton_empezar_juego = document.createElement("button")
 
+const h2_puntos_a_alcanzar = document.createElement("h2")
+const h3_mensaje_puntso = document.createElement("h3")
+const input_puntos = document.createElement("input")
+
 // Alerta:
 
 const alerta = document.createElement("p")
@@ -282,7 +286,7 @@ botonIndividual.addEventListener("click",()=>{
                 queEsEquipos.remove()
                 queEsEquiposACiegas.remove()
                 
-    
+                if(resultado >= 1 && resultado <= 3){
                 document.querySelector(".blurmejora").appendChild(h2_Jugadores)
                 h2_Jugadores.classList.add("animate__backInDown")
                 h2_Jugadores.classList.add("h2_jugadores")
@@ -291,40 +295,55 @@ botonIndividual.addEventListener("click",()=>{
                 document.querySelector(".blurmejora").appendChild(h3_jugadores_aviso)
                 h3_jugadores_aviso.classList.add("animate__backInDown")
                 h3_jugadores_aviso.classList.add("h3_jugadores_aviso")
-                h3_jugadores_aviso.innerHTML = "Modifica el nombre de los jugadores a tu gusto seleccionando el cuadro"
+                h3_jugadores_aviso.innerHTML = "Modifica el nombre del jugador a tu gusto seleccionando el cuadro"
                 
+                document.querySelector(".blurmejora").appendChild(h2_puntos_a_alcanzar)
+                h2_puntos_a_alcanzar.classList.add("animate__backInDown")
+                h2_puntos_a_alcanzar.classList.add("h2_puntos_a_alcanzar")
+                h2_puntos_a_alcanzar.innerHTML = "Puntos a alcanzar"
                 setTimeout(()=>{
-                    document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
-                    boton_empezar_juego.classList.add("animate__backInUp")
-                    boton_empezar_juego.classList.add("botonEmpezarJuego")
-                    boton_empezar_juego.innerHTML = "Siguiente"
-
-                    for(i=0; i<resultado; i++){
-
-                    const item = document.createElement("input")
-                    item.placeholder = `Jugador ${i+1}`
-                    item.classList.add("animate__backInUp")
-                    item.classList.add("items_individualmodo-casual")
-                    fragmentoFlex.appendChild(item)
-                    if(resultado == 1){
-                        const h2_puntaje_a_jugar = document.createElement("h2")
-                        document.querySelector(".blurmejora").appendChild(h2_puntaje_a_jugar)
-                        h2_puntaje_a_jugar.classList.add("animate__backInDown")
-                        h2_puntaje_a_jugar.classList.add("h2_puntaje_a_jugar")
-                        h2_puntaje_a_jugar.innerHTML = "Escriba el puntaje a jugar: "
-
-                        item.classList.add("items_individualmodo-casual1")
-                        h2_Jugadores.innerHTML = "JUGADOR"
-                        h3_jugadores_aviso.innerHTML = "Modifica el nombre del jugador a tu gusto seleccionando el cuadro"
+                    for(i=0;i<resultado;i++){
+                        const item = document.createElement("input")
+                        item.classList.add("animate__backInUp")
+                        item.classList.add("items_individualmodo-casual_entre1y3")
+                        item.placeholder = `Jugador ${i+1}`
+                        contenedorFlex.classList.replace("contenedor_flex","contenedorFlex1-3")
+                        fragmentoFlex.appendChild(item)
                     }
-                    console.log(item)
                     contenedorFlex.appendChild(fragmentoFlex)
-                }
-                
                 },800)
-
-
+                    
                 
+
+
+                } else if(resultado >= 4 && resultado <= 9){
+                    document.querySelector(".blurmejora").appendChild(h2_Jugadores)
+                    h2_Jugadores.classList.add("animate__backInDown")
+                    h2_Jugadores.classList.add("h2_jugadores")
+                    h2_Jugadores.innerHTML ="JUGADORES:"
+        
+                    document.querySelector(".blurmejora").appendChild(h3_jugadores_aviso)
+                    h3_jugadores_aviso.classList.add("animate__backInDown")
+                    h3_jugadores_aviso.classList.add("h3_jugadores_aviso")
+                    h3_jugadores_aviso.innerHTML = "Modifica el nombre de los jugadores a tu gusto seleccionando el cuadro"
+                    
+                    setTimeout(()=>{
+                        document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
+                        boton_empezar_juego.classList.add("animate__backInUp")
+                        boton_empezar_juego.classList.add("botonEmpezarJuego")
+                        boton_empezar_juego.innerHTML = "Siguiente"
+    
+                        for(i=0; i<resultado; i++){
+                        const item = document.createElement("input")
+                        item.placeholder = `Jugador ${i+1}`
+                        item.classList.add("animate__backInUp")
+                        item.classList.add("items_individualmodo-casual")
+                        fragmentoFlex.appendChild(item)
+                        console.log(item)  
+                        }
+                        contenedorFlex.appendChild(fragmentoFlex)
+                    },800)
+                }                 
             }
         }
     })
