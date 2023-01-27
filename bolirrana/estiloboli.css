@@ -101,7 +101,7 @@ a:visited{
     font-size: 30px;
 }
 .boton-empezae{
-    font-size: 18px;
+    font-size: 28px;
     padding: 10px 40px;
     margin: 30px;
     border-radius: 20px;
@@ -111,7 +111,7 @@ a:visited{
 }
 .boton-empezae:hover{
     padding: 10px 80px;
-    font-size: 22px;
+    font-size: 32px;
     background-color: rgb(255, 230, 0);
     
 }
@@ -468,7 +468,9 @@ a:visited{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    position: absolute;
     text-align: center;
+    top: 28.5%;
 }
 .items_individualmodo-casual{
     background-color: #fff;
@@ -477,20 +479,66 @@ a:visited{
     margin: 20px 10px;
     padding: 20px;
     border-radius: 20px;
-    min-width: 30%
+    min-width: 24%;
+    max-width: 30%;
+    text-align: center;
+    font-size: 22px;
+}
+.items_individualmodo-casual::placeholder{
+    text-align: center;
+    font-size: 20px
 }
 .blurmejora{
-    height: 80vh;
+    height: 90vh;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     font-size: larger;
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 90vw;
+    width: 100vw;
 
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.1);
     -webkit-backdrop-filter: blur(8.3px);
     backdrop-filter: blur(8.3px);
+}
+.h2_jugadores{
+    position: absolute;
+    top: 8%;
+    font-size: 45px;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.294);
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.408);
+}
+.h3_jugadores_aviso{
+    position: absolute;
+    top: 21%;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.408);
+}
+.botonEmpezarJuego{
+    position: absolute;
+    bottom: 11%;
+    border-radius: 20px;
+    background-color: rgb(0, 70, 8);
+    width: 20%;
+    height: 10%;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration:solid;
+    color: #fff;
+    border: 3px solid black;
+    transition-property: color, background, width;
+    transition-duration: .4s;
+}
+.botonEmpezarJuego:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 70, 8);
+    width: 30%;
 }

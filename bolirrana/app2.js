@@ -51,6 +51,12 @@ const botonSiguiente = document.createElement("button")
 const h2EligeNumeroDeJugadoresPorEquipo = document.createElement("h2")
 const input_numero_jugadores_por_equipo = document.createElement("input")
 
+// Menu jugadores:
+
+const h2_Jugadores = document.createElement("h2")
+const h3_jugadores_aviso = document.createElement("h3")
+const boton_empezar_juego = document.createElement("button")
+
 // Alerta:
 
 const alerta = document.createElement("p")
@@ -205,10 +211,6 @@ botonIndividual.addEventListener("click",()=>{
     textoComprobador +="individual"
     console.log(textoComprobador)
 
-    if(textoComprobador === "iniciocasualindividual"){
-        iniciocasualindividual = true
-        alert(iniciocasualindividual)
-    }
     if(textoComprobador === "iniciocompetitivoindividual"){
         iniciocompetitivoindividual = true
         alert(iniciocompetitivoindividual)
@@ -243,6 +245,7 @@ botonIndividual.addEventListener("click",()=>{
 
         },900)
     },250)
+
     botonSiguiente.addEventListener("click",()=>{
         resultado = parseInt(inputNumeroDeJugadores.value)
         if(isNaN(inputNumeroDeJugadores.value) || inputNumeroDeJugadores.value <= 0){
@@ -265,22 +268,44 @@ botonIndividual.addEventListener("click",()=>{
             }
         }
         if(seguros == true){
-
-            const contenedorFlex = document.createElement("div")
-            contenedorFlex.classList.add("contenedor_flex")
-            blur.appendChild(contenedorFlex)
-            blur.classList.replace("blur","blurmejora")
-            
-            const fragmentoFlex = document.createDocumentFragment();
-
-            for(i=0; i<resultado; i++){
-                const item = document.createElement("div")
-                item.innerHTML = `este es el item ${i+1} de la lista`
-                item.classList.add("items_individualmodo-casual")
-                fragmentoFlex.appendChild(item)
-                console.log(item)
+            if(textoComprobador === "iniciocasualindividual"){   // casual e individual
+                const contenedorFlex = document.createElement("div")
+                contenedorFlex.classList.add("contenedor_flex")
+                blur.appendChild(contenedorFlex)
+                blur.classList.replace("blur","blurmejora")
+    
+                queEsCasual.remove()
+                queEsCompetitivo.remove()
+                queEsIndividual.remove()
+                queEsEquipos.remove()
+                queEsEquiposACiegas.remove()
+                
+                const fragmentoFlex = document.createDocumentFragment();
+    
+                document.querySelector(".blurmejora").appendChild(h2_Jugadores)
+                h2_Jugadores.classList.add("animate__backInDown")
+                h2_Jugadores.classList.add("h2_jugadores")
+                h2_Jugadores.innerHTML ="JUGADORES:"
+    
+                document.querySelector(".blurmejora").appendChild(h3_jugadores_aviso)
+                h3_jugadores_aviso.classList.add("animate__backInDown")
+                h3_jugadores_aviso.classList.add("h3_jugadores_aviso")
+                h3_jugadores_aviso.innerHTML = "Modifica el nombre de los jugadores a tu gusto seleccionando el cuadro"
+    
+                document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
+                boton_empezar_juego.classList.add("animate__backInUp")
+                boton_empezar_juego.classList.add("botonEmpezarJuego")
+                boton_empezar_juego.innerHTML = "Empezar a jugar"
+                for(i=0; i<resultado; i++){
+                    const item = document.createElement("input")
+                    item.placeholder = `Jugador ${i+1}`
+                    item.classList.add("animate__backInUp")
+                    item.classList.add("items_individualmodo-casual")
+                    fragmentoFlex.appendChild(item)
+                    console.log(item)
+                }
+                contenedorFlex.appendChild(fragmentoFlex)
             }
-            contenedorFlex.appendChild(fragmentoFlex)
         }
     })
 })
