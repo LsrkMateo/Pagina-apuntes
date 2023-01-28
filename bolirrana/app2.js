@@ -64,6 +64,7 @@ const input_puntos = document.createElement("input")
 // Alerta nombre de jugadores:
 
 const alertaJugadores = document.createElement("p")
+const alertaPuntaje = document.createElement("p")
 
 // Alerta numero de jugadores:
 
@@ -313,7 +314,7 @@ botonIndividual.addEventListener("click",()=>{
                 
                 if(input_puntos)
 
-                items = []
+                var items = []
 
                 setTimeout(()=>{
                     for(i=0;i<resultado;i++){
@@ -323,9 +324,11 @@ botonIndividual.addEventListener("click",()=>{
                         item.classList.add("items_individualmodo-casual_entre1y3")
                         item.classList.add(`jugador_${i}`)
                         item.placeholder = `Jugador ${i+1}`
+                        
                         contenedorFlex.classList.replace("contenedor_flex","contenedorFlex1-3")
                         fragmentoFlex.appendChild(item)                       
                     }
+                    console.log(item.name)
                     
                     contenedorFlex.appendChild(fragmentoFlex)
 
@@ -341,9 +344,51 @@ botonIndividual.addEventListener("click",()=>{
 
                     boton_empezar_juego.addEventListener("click",()=>{
                         for(i=0;i<resultado;i++){
-                            hola = toString(document.querySelector(`jugador_${i}`))
-                            console.log(hola)
+                            jugador = document.querySelector(`.animate__backInUp.items_individualmodo-casual_entre1y3.jugador_${i}`)
+                            if(isNaN(input_puntos.value) || input_puntos.value == 0){
+                                document.querySelector(".blurmejora").appendChild(alertaPuntaje)
+                                alertaPuntaje.classList.add("alertaPuntaje")
+                                alertaPuntaje.innerText ="Introduzca un valor valido para el puntaje"
+                                var puntajeBien = false
+                            }else{
+                                var puntajeBien = true
+                                alertaPuntaje.remove()
+                            }
+                            if(jugador.value == ""){
+                                document.querySelector(".blurmejora").appendChild(alertaJugadores)
+                                alertaJugadores.classList.add("alertaJugadores")
+                                alertaJugadores.innerHTML = "Por favor, completa todos los campos de los jugadores"
+                            }else{
+                                alertaJugadores.remove()
+                                var nombresBien = true
+                            }
+                            if(nombresBien == true && puntajeBien == true){
+                                items.push(jugador.value)
+                            }
                         }
+                        console.log(items)
+                        // jugador1 = document.querySelector(".animate__backInUp.items_individualmodo-casual_entre1y3.jugador_0")
+                        // jugador2 = document.querySelector(".animate__backInUp.items_individualmodo-casual_entre1y3.jugador_1")
+                        // jugador3 = document.querySelector(".animate__backInUp.items_individualmodo-casual_entre1y3.jugador_2")
+
+                        // // if (isNaN(input_puntos.value) || input_puntos.value == 0){
+                        // //     console.log("SIIIIII")
+                        // // }
+                        // if(jugador1.value == "" || jugador2.value == "" || jugador3.value == ""){
+                        //     document.querySelector(".blurmejora").appendChild(alertaJugadores)
+                        //     alertaJugadores.classList.add("alertaJugadores")
+                        //     alertaJugadores.innerHTML = "Por favor, completa todos los campos"
+
+                        //     console.log("oh no")
+                        // } else {
+                        //     items.push(jugador1.value)
+                        //     items.push(jugador2.value)
+                        //     items.push(jugador3.value)
+
+                        //     alertaJugadores.remove()
+                        // }
+                        // console.log(items)
+                        // console.log(items[0])
                     })
 
                     

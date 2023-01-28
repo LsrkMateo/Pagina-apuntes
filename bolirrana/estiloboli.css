@@ -542,7 +542,7 @@ a:visited{
     padding: 7px 10px;
     border-radius: 20px;
     position: absolute;
-    bottom: 29%;
+    bottom: 26%;
     min-width: 10%;
     max-width: 30%;
     text-align: center;
@@ -603,12 +603,13 @@ a:visited{
     width: 30%;
 }
 
-.jugador_1{
-    background-color: black;
+.alertaJugadores{
+    color: red;
+    position: absolute;
+    bottom: 33%;
 }
-.jugador_0{
-    background-color: aqua;
-}
-.jugador_2{
-    background-color: red;
+.alertaPuntaje{
+    color: red;
+    position: absolute;
+    bottom: 22%;
 }
