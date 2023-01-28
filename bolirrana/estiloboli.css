@@ -115,6 +115,11 @@ a:visited{
     background-color: rgb(255, 230, 0);
     
 }
+.animate__backInLeft{
+    animation: backInLeft;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
 .animate__backOutDown{
     animation: backOutDown;
     animation-duration: .7s;
@@ -612,4 +617,71 @@ a:visited{
     color: red;
     position: absolute;
     bottom: 22%;
+}
+.mensaje_juego{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.471);
+    position: relative;
+
+
+    margin-bottom: 10px;
+
+    width: 90vw;
+    transition-property: width;
+    transition-duration: 1s;
+    
+    margin-top: 10px;
+    border-radius: 20px;
+    border: solid black 2px;
+    padding: 20px 10px;
+}
+.blurJuego{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    
+    flex-direction: column;
+    justify-content: center;
+}
+.mensaje_juegoRegistoPuntos{
+    text-align: center;
+    width: 50%;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.471);
+    margin-bottom: 20px;
+}
+.botonFlexContainer{
+    width: 90%;
+    height: 15vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.boton30{
+    height: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    min-width: 14vw;
+    max-width: 90vw;
+    border-radius: 20px;
+
+}
+.botonRegistrarPuntaje{
+    border-radius: 20px;
+    font-size: 20px;
+    width: 40%;
+    border: 2px solid black;
+    background-color: #fff;
+    padding: 10px 90px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin: 20px;
 }
