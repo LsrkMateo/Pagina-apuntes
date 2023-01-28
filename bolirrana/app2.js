@@ -1,3 +1,10 @@
+var textoComprobador = "inicio"
+var iniciocasualindividual = false
+var iniciocasualequipos = false
+var iniciocasualequiposaciegas = false
+var iniciocompetitivoindividual = false
+var iniciocompetitivoequipos = false
+var iniciocompetitivoequiposaciegas = false
 
 const contenedorBlur = document.querySelector(".contenedor-blur")
 
@@ -25,7 +32,6 @@ const queEsIndividual = document.createElement("p")
 const queEsEquipos = document.createElement("p")
 const queEsEquiposACiegas = document.createElement("p")
 
-
 // Modo de agrupacion:
 
 const divOpciones = document.createElement("div")
@@ -45,7 +51,22 @@ const botonSiguiente = document.createElement("button")
 const h2EligeNumeroDeJugadoresPorEquipo = document.createElement("h2")
 const input_numero_jugadores_por_equipo = document.createElement("input")
 
-// Alerta:
+// Menu jugadores:
+
+const h2_Jugadores = document.createElement("h2")
+const h3_jugadores_aviso = document.createElement("h3")
+const boton_empezar_juego = document.createElement("button")
+
+const h2_puntos_a_alcanzar = document.createElement("h2")
+const h3_mensaje_puntso = document.createElement("h3")
+const input_puntos = document.createElement("input")
+
+// Alerta nombre de jugadores:
+
+const alertaJugadores = document.createElement("p")
+const alertaPuntaje = document.createElement("p")
+
+// Alerta numero de jugadores:
 
 const alerta = document.createElement("p")
 
@@ -95,6 +116,9 @@ boton.addEventListener("click",()=>{
 // Botones:
 
 botonCasual.addEventListener("click",()=>{
+    textoComprobador += "casual"                     
+    console.log(textoComprobador)
+
     botonCasual.classList.replace("animate__backInUp","animate__backOutRight")
     boton_competitivo.classList.replace("animate__backInUp","animate__backOutDown")
     escogerModoDeJuegoH2.classList.replace("animate__backInDown","animate__backOutUp")
@@ -142,6 +166,9 @@ botonCasual.addEventListener("click",()=>{
 })
 
 boton_competitivo.addEventListener("click",()=>{
+    textoComprobador += "competitivo"
+    console.log(textoComprobador)
+
     botonCasual.classList.replace("animate__backInUp","animate__backOutRight")
     boton_competitivo.classList.replace("animate__backInUp","animate__backOutDown")
     escogerModoDeJuegoH2.classList.replace("animate__backInDown","animate__backOutUp")
@@ -190,6 +217,14 @@ boton_competitivo.addEventListener("click",()=>{
 })
 
 botonIndividual.addEventListener("click",()=>{
+    textoComprobador +="individual"
+    console.log(textoComprobador)
+
+    if(textoComprobador === "iniciocompetitivoindividual"){
+        iniciocompetitivoindividual = true
+        alert(iniciocompetitivoindividual)
+    }
+    
     botonIndividual.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
@@ -219,6 +254,7 @@ botonIndividual.addEventListener("click",()=>{
 
         },900)
     },250)
+
     botonSiguiente.addEventListener("click",()=>{
         resultado = parseInt(inputNumeroDeJugadores.value)
         if(isNaN(inputNumeroDeJugadores.value) || inputNumeroDeJugadores.value <= 0){
@@ -231,6 +267,7 @@ botonIndividual.addEventListener("click",()=>{
                 inputNumeroDeJugadores.classList.replace("animate__backInUp","animate__backOutRight")
                 h2EligeNumeroDeJugadores.classList.replace("animate__backInDown","animate__backOutUp")
                 botonSiguiente.classList.replace("animate__backInUp","animate__backOutRight")
+                var seguros = true
                 alerta.remove()
                 setTimeout(()=>{
                     inputNumeroDeJugadores.remove()
@@ -239,10 +276,151 @@ botonIndividual.addEventListener("click",()=>{
                 },250)
             }
         }
+        if(seguros == true){
+        
+            if(textoComprobador === "iniciocasualindividual"){   // casual e individual
+                const contenedorFlex = document.createElement("div")
+                contenedorFlex.classList.add("contenedor_flex")
+                blur.appendChild(contenedorFlex)
+                blur.classList.replace("blur","blurmejora")
+                const fragmentoFlex = document.createDocumentFragment();
+
+                queEsCasual.remove()
+                queEsCompetitivo.remove()
+                queEsIndividual.remove()
+                queEsEquipos.remove()
+                queEsEquiposACiegas.remove()
+                
+                if(resultado >= 1 && resultado <= 3){
+                document.querySelector(".blurmejora").appendChild(h2_Jugadores)
+                h2_Jugadores.classList.add("animate__backInDown")
+                h2_Jugadores.classList.add("h2_jugadores")
+                h2_Jugadores.innerHTML ="JUGADORES:"
+    
+                document.querySelector(".blurmejora").appendChild(h3_jugadores_aviso)
+                h3_jugadores_aviso.classList.add("animate__backInDown")
+                h3_jugadores_aviso.classList.add("h3_jugadores_aviso")
+                h3_jugadores_aviso.innerHTML = "Modifica el nombre del jugador a tu gusto seleccionando el cuadro"
+                
+                document.querySelector(".blurmejora").appendChild(h2_puntos_a_alcanzar)
+                h2_puntos_a_alcanzar.classList.add("animate__backInDown")
+                h2_puntos_a_alcanzar.classList.add("h2_puntos_a_alcanzar")
+                h2_puntos_a_alcanzar.innerHTML = "Puntos a alcanzar"
+
+                document.querySelector(".blurmejora").appendChild(h3_mensaje_puntso)
+                h3_mensaje_puntso.classList.add("animate__backInDown")
+                h3_mensaje_puntso.classList.add("h3_mensaje_puntso")
+                h3_mensaje_puntso.innerHTML = `Escribe el numero de puntos a jugar, el jugador que primero alcanze la meta de puntos gana`
+                
+                if(input_puntos)
+
+                var items = []
+
+                setTimeout(()=>{
+                    for(i=0;i<resultado;i++){
+                        var item =document.createElement("input")
+                        
+                        item.classList.add("animate__backInUp")
+                        item.classList.add("items_individualmodo-casual_entre1y3")
+                        item.classList.add(`jugador_${i}`)
+                        item.placeholder = `Jugador ${i+1}`
+                        
+                        contenedorFlex.classList.replace("contenedor_flex","contenedorFlex1-3")
+                        fragmentoFlex.appendChild(item)                       
+                    }
+                    console.log(item.name)
+                    
+                    contenedorFlex.appendChild(fragmentoFlex)
+
+                    document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
+                    boton_empezar_juego.classList.add("animate__backInUp")
+                    boton_empezar_juego.classList.add("botonEmpezarJuego")
+                    boton_empezar_juego.innerHTML = "Siguiente"
+
+                    document.querySelector(".blurmejora").appendChild(input_puntos)
+                    input_puntos.classList.add("animate__backInUp")
+                    input_puntos.classList.add("input_puntos")
+                    input_puntos.placeholder = "puntos"
+
+                    boton_empezar_juego.addEventListener("click",()=>{
+                        for(i=0;i<resultado;i++){
+                            jugador = document.querySelector(`.animate__backInUp.items_individualmodo-casual_entre1y3.jugador_${i}`)
+                            if(isNaN(input_puntos.value) || input_puntos.value == 0){
+                                document.querySelector(".blurmejora").appendChild(alertaPuntaje)
+                                alertaPuntaje.classList.add("alertaPuntaje")
+                                alertaPuntaje.innerText ="Introduzca un valor valido para el puntaje"
+                                var puntajeBien = false
+                            }else{
+                                var puntajeBien = true
+                                alertaPuntaje.remove()
+                            }
+                            if(jugador.value == ""){
+                                document.querySelector(".blurmejora").appendChild(alertaJugadores)
+                                alertaJugadores.classList.add("alertaJugadores")
+                                alertaJugadores.innerHTML = "Por favor, completa todos los campos de los jugadores"
+                            }else{
+                                alertaJugadores.remove()
+                                var nombresBien = true
+                            }
+                            if(nombresBien == true && puntajeBien == true){
+                                items.push(jugador.value)
+                                document.querySelector(".blurmejora").classList.add("animate__backOutDown")
+                                setTimeout(()=>{
+                                    contenedorBlur.remove()
+                                },250)
+                            }
+                        }
+                        console.log(items)
+                    })           
+                },800)
+                    
+                } else if(resultado >= 4 && resultado <= 9){
+                    document.querySelector(".blurmejora").appendChild(h2_Jugadores)
+                    h2_Jugadores.classList.add("animate__backInDown")
+                    h2_Jugadores.classList.add("h2_jugadores")
+                    h2_Jugadores.innerHTML ="JUGADORES:"
+        
+                    document.querySelector(".blurmejora").appendChild(h3_jugadores_aviso)
+                    h3_jugadores_aviso.classList.add("animate__backInDown")
+                    h3_jugadores_aviso.classList.add("h3_jugadores_aviso")
+                    h3_jugadores_aviso.innerHTML = "Modifica el nombre de los jugadores a tu gusto seleccionando el cuadro"
+                    
+                    setTimeout(()=>{
+                        document.querySelector(".blurmejora").appendChild(boton_empezar_juego)
+                        boton_empezar_juego.classList.add("animate__backInUp")
+                        boton_empezar_juego.classList.add("botonEmpezarJuego")
+                        boton_empezar_juego.innerHTML = "Siguiente"
+    
+                        for(i=0; i<resultado; i++){
+                        const item = document.createElement("input")
+                        item.placeholder = `Jugador ${i+1}`
+                        item.classList.add("animate__backInUp")
+                        item.classList.add("items_individualmodo-casual")
+                        fragmentoFlex.appendChild(item)
+                        console.log(item)  
+                        }
+                        contenedorFlex.appendChild(fragmentoFlex)
+                    },800)
+                }                 
+            }
+        }
     })
 })
 
 botonEquipos.addEventListener("click",()=>{
+    textoComprobador +="equipos"
+    console.log(textoComprobador)
+
+    if(textoComprobador === "iniciocasualequipos"){
+        iniciocasualequipos = true
+        alert(iniciocasualequipos)
+    }
+
+    if(textoComprobador === "iniciocompetitivoequipos"){
+        iniciocompetitivoequipos = true
+        alert(iniciocompetitivoequipos)
+    }
+    
     botonIndividual.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
@@ -316,6 +494,18 @@ botonEquipos.addEventListener("click",()=>{
 })
 
 botonEquiposACiegas.addEventListener("click",()=>{
+    textoComprobador += "equiposaciegas"
+    console.log(textoComprobador)
+
+    if(textoComprobador === "iniciocasualequiposaciegas"){
+        iniciocasualequiposaciegas = true
+        alert(iniciocasualequiposaciegas)
+    }
+    if(textoComprobador === "iniciocompetitivoequiposaciegas"){
+        iniciocompetitivoequiposaciegas = true
+        alert(iniciocompetitivoequiposaciegas)
+    }
+
     botonIndividual.classList.replace("animate__backInUp","animate__backOutDown")
     botonEquipos.classList.replace("animate__backInUp","animate__backOutRight")
     botonEquiposACiegas.classList.replace("animate__backInUp","animate__backOutDown")
@@ -387,3 +577,7 @@ botonEquiposACiegas.addEventListener("click",()=>{
         },800)
     },250)
 })
+
+
+
+console.log(textoComprobador)
