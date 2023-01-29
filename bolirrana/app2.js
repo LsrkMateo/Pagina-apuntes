@@ -381,6 +381,7 @@ botonIndividual.addEventListener("click",()=>{
                             }
                             if(nombresBien == true && puntajeBien == true){
                                 items.push(jugador.value)
+                                
                                 document.querySelector(".blurmejora").classList.add("animate__backOutDown")
                                 setTimeout(()=>{
                                     contenedorBlur.remove()
@@ -389,7 +390,7 @@ botonIndividual.addEventListener("click",()=>{
                                 var jugador1Jugando = true
                                 var jugadoresAgregados= 0
 
-                                turno = 0
+                                var turno = 0
 
                                 blurJuego = document.createElement("div")
                                 blurJuego.classList.add("blurJuego")
@@ -399,7 +400,7 @@ botonIndividual.addEventListener("click",()=>{
                                 mensajeJuego.classList.add("animate__backInUp")
                                 mensajeJuego.classList.add("mensaje_juego")
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
-                                console.log(jugadoresAgregados)
+                                // console.log(jugadoresAgregados)
 
                                 blurJuego.appendChild(mensaje_juegoRegistoPuntos)
                                 mensaje_juegoRegistoPuntos.classList.add("animate__backInDown")
@@ -415,29 +416,39 @@ botonIndividual.addEventListener("click",()=>{
                                 boton30.classList.add("boton30")
                                 boton30.innerText="30"
 
+                                var puntaje = 0
+
+                                boton30.addEventListener("click",()=>{
+                                    puntaje += 30
+                                    
+                                    console.log(puntaje)
+                                    console.log(items)
+                                    mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                                })
+
                                 botonFlexContainer.appendChild(boton40)
                                 boton40.classList.add("animate__backInUp")
-                                boton40.classList.add("boton30")
+                                boton40.classList.add("boton40")
                                 boton40.innerText="40"
                                 
                                 botonFlexContainer.appendChild(boton50)
                                 boton50.classList.add("animate__backInUp")
-                                boton50.classList.add("boton30")
+                                boton50.classList.add("boton50")
                                 boton50.innerText="50"
 
                                 botonFlexContainer.appendChild(boton150)
                                 boton150.classList.add("animate__backInUp")
-                                boton150.classList.add("boton30")
+                                boton150.classList.add("boton150")
                                 boton150.innerText="150"
 
                                 botonFlexContainer.appendChild(boton200)
                                 boton200.classList.add("animate__backInUp")
-                                boton200.classList.add("boton30")
+                                boton200.classList.add("boton200")
                                 boton200.innerText="200"
 
                                 botonFlexContainer.appendChild(boton300)
                                 boton300.classList.add("animate__backInUp")
-                                boton300.classList.add("boton30")
+                                boton300.classList.add("boton300")
                                 boton300.innerText="300"
 
                                 botonFlexContainer.appendChild(botonRegistrarPuntaje)

@@ -674,6 +674,56 @@ a:visited{
     border-radius: 20px;
 
 }
+.boton40{
+    height: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    min-width: 14vw;
+    max-width: 90vw;
+    border-radius: 20px;
+
+}
+.boton50{
+    height: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    min-width: 14vw;
+    max-width: 90vw;
+    border-radius: 20px;
+
+}
+.boton150{
+    height: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    min-width: 14vw;
+    max-width: 90vw;
+    border-radius: 20px;
+
+}
+.boton200{
+    height: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    min-width: 14vw;
+    max-width: 90vw;
+    border-radius: 20px;
+
+}
+.boton300{
+    height: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #fff;
+    min-width: 14vw;
+    max-width: 90vw;
+    border-radius: 20px;
+
+}
 .botonRegistrarPuntaje{
     border-radius: 20px;
     font-size: 20px;
