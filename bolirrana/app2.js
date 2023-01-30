@@ -359,17 +359,6 @@ botonIndividual.addEventListener("click",()=>{
                     input_puntos.placeholder = "puntos"
 
                     boton_empezar_juego.addEventListener("click",()=>{
-                        var turno = 0
-                        var puntaje = 0
-                        boton30.addEventListener("click",()=>{
-                            puntaje += 30 
-                            console.log(puntaje)
-                            console.log(items)
-                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
-                        })
-
-                        
-                        
                         for(i=0;i<resultado;i++){
                             jugador = document.querySelector(`.animate__backInUp.items_individualmodo-casual_entre1y3.jugador_${i}`)
                             if(isNaN(input_puntos.value) || input_puntos.value == 0){
@@ -390,17 +379,15 @@ botonIndividual.addEventListener("click",()=>{
                                 var nombresBien = true
                             }
                             if(nombresBien == true && puntajeBien == true){
+
+                                turno = 0
+
                                 items.push(jugador.value)
                                 
                                 document.querySelector(".blurmejora").classList.add("animate__backOutDown")
                                 setTimeout(()=>{
                                     contenedorBlur.remove()
                                 },250)
-                                var terminado = false
-                                var jugador1Jugando = true
-                                var jugadoresAgregados= 0
-
-                                
 
                                 blurJuego = document.createElement("div")
                                 blurJuego.classList.add("blurJuego")
@@ -410,7 +397,7 @@ botonIndividual.addEventListener("click",()=>{
                                 mensajeJuego.classList.add("animate__backInUp")
                                 mensajeJuego.classList.add("mensaje_juego")
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
-                                // console.log(jugadoresAgregados)
+                                
 
                                 blurJuego.appendChild(mensaje_juegoRegistoPuntos)
                                 mensaje_juegoRegistoPuntos.classList.add("animate__backInDown")
@@ -425,9 +412,7 @@ botonIndividual.addEventListener("click",()=>{
                                 boton30.classList.add("animate__backInUp")
                                 boton30.classList.add("boton30")
                                 boton30.innerText="30"
-
                                 
-
                                 botonFlexContainer.appendChild(boton40)
                                 boton40.classList.add("animate__backInUp")
                                 boton40.classList.add("boton40")
@@ -483,6 +468,44 @@ botonIndividual.addEventListener("click",()=>{
                                 
                             }
                         }
+                        var turno = 0
+                        var puntaje = 0
+                        boton30.addEventListener("click",()=>{
+                            puntaje += 30 
+                            console.log(puntaje)
+                            console.log(items)
+                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                        })
+                        boton40.addEventListener("click",()=>{
+                            puntaje += 40 
+                            console.log(puntaje)
+                            console.log(items)
+                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                        })
+                        boton50.addEventListener("click",()=>{
+                            puntaje += 50 
+                            console.log(puntaje)
+                            console.log(items)
+                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                        })
+                        boton150.addEventListener("click",()=>{
+                            puntaje += 150 
+                            console.log(puntaje)
+                            console.log(items)
+                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                        })
+                        boton200.addEventListener("click",()=>{
+                            puntaje += 200 
+                            console.log(puntaje)
+                            console.log(items)
+                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                        })
+                        boton300.addEventListener("click",()=>{
+                            puntaje += 300 
+                            console.log(puntaje)
+                            console.log(items)
+                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                        })
                         console.log(items)
                     })           
                 },800)
