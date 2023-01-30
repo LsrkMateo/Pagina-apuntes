@@ -359,6 +359,16 @@ botonIndividual.addEventListener("click",()=>{
                     input_puntos.placeholder = "puntos"
 
                     boton_empezar_juego.addEventListener("click",()=>{
+                        var turno = 0
+                        var puntaje = 0
+                        boton30.addEventListener("click",()=>{
+                            puntaje += 30 
+                            console.log(puntaje)
+                            console.log(items)
+                            mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
+                        })
+
+                        
                         
                         for(i=0;i<resultado;i++){
                             jugador = document.querySelector(`.animate__backInUp.items_individualmodo-casual_entre1y3.jugador_${i}`)
@@ -390,7 +400,7 @@ botonIndividual.addEventListener("click",()=>{
                                 var jugador1Jugando = true
                                 var jugadoresAgregados= 0
 
-                                var turno = 0
+                                
 
                                 blurJuego = document.createElement("div")
                                 blurJuego.classList.add("blurJuego")
@@ -416,15 +426,7 @@ botonIndividual.addEventListener("click",()=>{
                                 boton30.classList.add("boton30")
                                 boton30.innerText="30"
 
-                                var puntaje = 0
-
-                                boton30.addEventListener("click",()=>{
-                                    puntaje += 30 / resultado
-                                    
-                                    console.log(puntaje)
-                                    console.log(items)
-                                    mensajeJuego.innerHTML = `${items[turno]} juega | tiene ${puntaje}`
-                                })
+                                
 
                                 botonFlexContainer.appendChild(boton40)
                                 boton40.classList.add("animate__backInUp")
