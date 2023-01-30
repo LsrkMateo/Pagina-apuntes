@@ -448,26 +448,27 @@ botonIndividual.addEventListener("click",()=>{
                                 botonSiguientejugador.classList.add("botonRegistrarPuntaje")
                                 botonSiguientejugador.innerHTML = "Siguiente Jugador"
 
-                                botonSiguientejugador.addEventListener("click",()=>{
-                                    mensajeJuego.classList.replace("animate__backInUp","animate__backOutRight")
-                                    
-                                    setTimeout(()=>{
-                                        turno +=1
-                                        console.log(turno)
-                                        console.log(items)
-                                        mensajeJuego.classList.replace("animate__backOutRight","animate__backInLeft")
-                                        mensajeJuego.innerHTML = `${items[turno]} juega`
-                                    },250)
-                                })
-                                // do{
-
-                                //     // al presionar boton, poner terminado en true y sumar 1 al turno
-                                // }
-                                // while(terminado == true)
+                                
 
                                 
                             }
                         }
+                        botonSiguientejugador.addEventListener("click",()=>{
+                            mensajeJuego.classList.replace("animate__backInUp","animate__backOutRight")
+                            
+                            setTimeout(()=>{
+                                turno +=1
+                                console.log(turno)
+                                console.log(items)
+                                mensajeJuego.classList.replace("animate__backOutRight","animate__backInLeft")
+                                mensajeJuego.innerHTML = `${items[turno]} juega`
+                            },250)
+                        })
+                        // do{
+
+                        //     // al presionar boton, poner terminado en true y sumar 1 al turno
+                        // }
+                        // while(terminado == true)
                         var turno = 0
                         var puntaje = 0
                         boton30.addEventListener("click",()=>{
