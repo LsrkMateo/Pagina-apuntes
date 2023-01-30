@@ -453,16 +453,22 @@ botonIndividual.addEventListener("click",()=>{
                                 
                             }
                         }
-                        botonSiguientejugador.addEventListener("click",()=>{
-                            mensajeJuego.classList.replace("animate__backInUp","animate__backOutRight")
+                        botonSiguientejugador.addEventListener("click",()=>{                        
                             
-                            setTimeout(()=>{
-                                turno +=1
+                            
+                            if (turno == resultado-1){ 
+                                turno = 0
                                 console.log(turno)
                                 console.log(items)
-                                mensajeJuego.classList.replace("animate__backOutRight","animate__backInLeft")
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
-                            },250)
+                            } else{
+                                turno +=1                           
+                                mensajeJuego.innerHTML = `${items[turno]} juega`
+                                console.log(turno)
+                                console.log(items)
+                            }
+                    
+                        
                         })
                         // do{
 
