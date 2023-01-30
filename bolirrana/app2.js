@@ -272,7 +272,7 @@ botonIndividual.addEventListener("click",()=>{
     },250)
 
     botonSiguiente.addEventListener("click",()=>{
-        resultado = parseInt(inputNumeroDeJugadores.value)
+        var resultado = parseInt(inputNumeroDeJugadores.value)
         if(isNaN(inputNumeroDeJugadores.value) || inputNumeroDeJugadores.value <= 0){
             noEsNumero = true
             document.querySelector(".blur").appendChild(alerta)
@@ -419,7 +419,7 @@ botonIndividual.addEventListener("click",()=>{
                                 var puntaje = 0
 
                                 boton30.addEventListener("click",()=>{
-                                    puntaje += 30
+                                    puntaje += 30 / resultado
                                     
                                     console.log(puntaje)
                                     console.log(items)
