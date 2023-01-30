@@ -383,10 +383,12 @@ botonIndividual.addEventListener("click",()=>{
                         if(nombresBien == true && puntajeBien == true){
                             turno = 0
                             items.push(jugador.value)
-                            
+                            document.body.appendChild(flexContainerAbajo)
+                            flexContainerAbajo.classList.add("flexContainerAbajo")
                             for (i=0; i<resultado; i++){
-                                document.body.appendChild(flexContainerAbajo)
-                                flexContainerAbajo.classList.add("flexContainerAbajo")
+                                cuadroJugadores = document.createElement("div")
+                                flexContainerAbajo.appendChild(cuadroJugadores)
+                                cuadroJugadores.classList.add("cuadroJugadores")
                             }
 
                             document.querySelector(".blurmejora").classList.add("animate__backOutDown")
