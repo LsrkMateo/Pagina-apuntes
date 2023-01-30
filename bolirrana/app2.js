@@ -446,35 +446,18 @@ botonIndividual.addEventListener("click",()=>{
                                 botonFlexContainer.appendChild(botonSiguientejugador)
                                 botonSiguientejugador.classList.add("animate__backInUp")
                                 botonSiguientejugador.classList.add("botonRegistrarPuntaje")
-                                botonSiguientejugador.innerHTML = "Siguiente Jugador"
-
-                                
-
-                                
+                                botonSiguientejugador.innerHTML = "Siguiente Jugador"   
                             }
                         }
                         botonSiguientejugador.addEventListener("click",()=>{                        
-                            
-                            
                             if (turno == resultado-1){ 
-                                turno = 0
-                                console.log(turno)
-                                console.log(items)
+                                turno = 0                       
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
                             } else{
                                 turno +=1                           
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
-                                console.log(turno)
-                                console.log(items)
-                            }
-                    
-                        
+                            }                  
                         })
-                        // do{
-
-                        //     // al presionar boton, poner terminado en true y sumar 1 al turno
-                        // }
-                        // while(terminado == true)
                         var turno = 0
                         var puntaje = 0
                         boton30.addEventListener("click",()=>{
