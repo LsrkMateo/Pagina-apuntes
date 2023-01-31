@@ -460,6 +460,7 @@ botonIndividual.addEventListener("click",()=>{
                             flexContainerAbajo.appendChild(cuadroJugadores)
                             cuadroJugadores.classList.add("cuadroJugadores")
 
+                            
                             h3CuadrosJugadores = document.createElement("h3")
                             h3CuadrosJugadores.classList.add("h3CuadrosJugadores")
                             h3CuadrosJugadores.classList.add(`numero_${i}`)
@@ -487,34 +488,44 @@ botonIndividual.addEventListener("click",()=>{
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         })
                         boton40.addEventListener("click",()=>{
-                            puntaje += 40 
+                            puntaje[turno] += 40 
                             console.log(puntaje)
                             console.log(items)
-                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje} puntos | Le faltan ${input_puntos.value - puntaje} puntos para ganar`
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         })
                         boton50.addEventListener("click",()=>{
-                            puntaje += 50 
+                            puntaje[turno] += 50 
                             console.log(puntaje)
                             console.log(items)
-                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje} puntos | Le faltan ${input_puntos.value - puntaje} puntos para ganar`
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         })
                         boton150.addEventListener("click",()=>{
-                            puntaje += 150 
+                            puntaje[turno] += 150 
                             console.log(puntaje)
                             console.log(items)
-                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje} puntos | Le faltan ${input_puntos.value - puntaje} puntos para ganar`
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         })
                         boton200.addEventListener("click",()=>{
-                            puntaje += 200 
+                            puntaje[turno] += 200 
                             console.log(puntaje)
                             console.log(items)
-                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje} puntos | Le faltan ${input_puntos.value - puntaje} puntos para ganar`
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         })
                         boton300.addEventListener("click",()=>{
-                            puntaje += 300 
+                            puntaje[turno] += 300 
                             console.log(puntaje)
                             console.log(items)
-                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje} puntos | Le faltan ${input_puntos.value - puntaje} puntos para ganar`
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         })
                         
                         
