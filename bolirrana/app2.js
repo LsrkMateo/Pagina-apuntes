@@ -383,13 +383,7 @@ botonIndividual.addEventListener("click",()=>{
                         if(nombresBien == true && puntajeBien == true){
                             turno = 0
                             items.push(jugador.value)
-                            document.body.appendChild(flexContainerAbajo)
-                            flexContainerAbajo.classList.add("flexContainerAbajo")
-                            for (i=0; i<resultado; i++){
-                                cuadroJugadores = document.createElement("div")
-                                flexContainerAbajo.appendChild(cuadroJugadores)
-                                cuadroJugadores.classList.add("cuadroJugadores")
-                            }
+                            
 
                             document.querySelector(".blurmejora").classList.add("animate__backOutDown")
                             setTimeout(()=>{
@@ -440,8 +434,36 @@ botonIndividual.addEventListener("click",()=>{
                             botonFlexContainer.appendChild(botonSiguientejugador)
                             botonSiguientejugador.classList.add("animate__backInUp")
                             botonSiguientejugador.classList.add("botonRegistrarPuntaje")
-                            botonSiguientejugador.innerHTML = "Siguiente Jugador"   
+                            botonSiguientejugador.innerHTML = "Siguiente Jugador" 
+
+                            
                         }
+                        }
+                        
+                        var turno = 0
+                        var puntaje = 0
+                        document.body.appendChild(flexContainerAbajo)
+                        flexContainerAbajo.classList.add("flexContainerAbajo")
+
+                        h2Rondas = document.createElement("h2")
+                        h2Rondas.classList.add("h2Rondas")
+                        botonFlexContainer.appendChild(h2Rondas)
+                        h2Rondas.innerHTML = "Ronda 1"
+
+                        
+                        
+
+                        
+                        for (i=0; i<resultado; i++){
+                            
+                            cuadroJugadores = document.createElement("div")
+                            flexContainerAbajo.appendChild(cuadroJugadores)
+                            cuadroJugadores.classList.add("cuadroJugadores")
+
+                            h3CuadrosJugadores = document.createElement("h3")
+                            h3CuadrosJugadores.classList.add("h3CuadrosJugadores")
+                            cuadroJugadores.appendChild(h3CuadrosJugadores)
+                            h3CuadrosJugadores.innerHTML = `<b> ${items[i]}: </b> <br> Tiene: ${puntaje} puntos <br> le faltan ${input_puntos.value - puntaje} puntos`
                         }
                         botonSiguientejugador.addEventListener("click",()=>{                        
                             if (turno == resultado-1){ 
@@ -450,10 +472,9 @@ botonIndividual.addEventListener("click",()=>{
                             } else{
                                 turno +=1                           
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
+                                
                             }                  
                         })
-                        var turno = 0
-                        var puntaje = 0
 
                         boton30.addEventListener("click",()=>{
                             puntaje += 30 
@@ -491,7 +512,8 @@ botonIndividual.addEventListener("click",()=>{
                             console.log(items)
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje} puntos | Le faltan ${input_puntos.value - puntaje} puntos para ganar`
                         })
-
+                        
+                        
                         console.log(items)
                     })           
                 },800)
