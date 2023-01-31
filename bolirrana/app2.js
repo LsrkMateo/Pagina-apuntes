@@ -86,6 +86,8 @@ const boton300 = document.createElement("button")
 const botonRegistrarPuntaje = document.createElement("button")
 const botonSiguientejugador = document.createElement("button")
 
+const flexContainerAbajo = document.createElement("div")
+
 // Boton introduccion:
 
 boton.addEventListener("click",()=>{
@@ -272,7 +274,7 @@ botonIndividual.addEventListener("click",()=>{
     },250)
 
     botonSiguiente.addEventListener("click",()=>{
-        resultado = parseInt(inputNumeroDeJugadores.value)
+        var resultado = parseInt(inputNumeroDeJugadores.value)
         if(isNaN(inputNumeroDeJugadores.value) || inputNumeroDeJugadores.value <= 0){
             noEsNumero = true
             document.querySelector(".blur").appendChild(alerta)
@@ -328,7 +330,7 @@ botonIndividual.addEventListener("click",()=>{
                 h3_mensaje_puntso.classList.add("h3_mensaje_puntso")
                 h3_mensaje_puntso.innerHTML = `Escribe el numero de puntos a jugar, el jugador que primero alcanze la meta de puntos gana`
                 
-                if(input_puntos)
+                
 
                 var items = []
 
@@ -359,7 +361,6 @@ botonIndividual.addEventListener("click",()=>{
                     input_puntos.placeholder = "puntos"
 
                     boton_empezar_juego.addEventListener("click",()=>{
-                        
                         for(i=0;i<resultado;i++){
                             jugador = document.querySelector(`.animate__backInUp.items_individualmodo-casual_entre1y3.jugador_${i}`)
                             if(isNaN(input_puntos.value) || input_puntos.value == 0){
@@ -379,98 +380,213 @@ botonIndividual.addEventListener("click",()=>{
                                 alertaJugadores.remove()
                                 var nombresBien = true
                             }
-                            if(nombresBien == true && puntajeBien == true){
-                                items.push(jugador.value)
-                                document.querySelector(".blurmejora").classList.add("animate__backOutDown")
-                                setTimeout(()=>{
-                                    contenedorBlur.remove()
-                                },250)
-                                var terminado = false
-                                var jugador1Jugando = true
-                                var jugadoresAgregados= 0
+                        if(nombresBien == true && puntajeBien == true){
+                            var turno = 0
+                            items.push(jugador.value)
+                            
 
-                                turno = 0
+                            document.querySelector(".blurmejora").classList.add("animate__backOutDown")
+                            setTimeout(()=>{
+                                contenedorBlur.remove()
+                            },250)
+                            blurJuego = document.createElement("div")
+                            blurJuego.classList.add("blurJuego")
+                            document.body.appendChild(blurJuego)
+                            blurJuego.appendChild(mensajeJuego)
+                            
+                            mensajeJuego.classList.add("mensaje_juego")
+                            mensajeJuego.innerHTML = `${items[turno]} juega`
+                            
+                            blurJuego.appendChild(mensaje_juegoRegistoPuntos)
+                            mensaje_juegoRegistoPuntos.classList.add("animate__backInDown")
+                            mensaje_juegoRegistoPuntos.classList.add("mensaje_juegoRegistoPuntos")
+                            mensaje_juegoRegistoPuntos.innerHTML = "Regista los puntos recolectados presionando en los siguientes botones: "
+                            blurJuego.appendChild(botonFlexContainer)
+                            botonFlexContainer.classList.add("animate__backInUp")
+                            botonFlexContainer.classList.add("botonFlexContainer")
+                            
+                            botonFlexContainer.appendChild(boton30)
+                            boton30.classList.add("animate__backInUp")
+                            boton30.classList.add("boton30")
+                            boton30.innerText="30"
+                            
+                            botonFlexContainer.appendChild(boton40)
+                            boton40.classList.add("animate__backInUp")
+                            boton40.classList.add("boton40")
+                            boton40.innerText="40"
+                            
+                            botonFlexContainer.appendChild(boton50)
+                            boton50.classList.add("animate__backInUp")
+                            boton50.classList.add("boton50")
+                            boton50.innerText="50"
+                            botonFlexContainer.appendChild(boton150)
+                            boton150.classList.add("animate__backInUp")
+                            boton150.classList.add("boton150")
+                            boton150.innerText="150"
+                            botonFlexContainer.appendChild(boton200)
+                            boton200.classList.add("animate__backInUp")
+                            boton200.classList.add("boton200")
+                            boton200.innerText="200"
+                            botonFlexContainer.appendChild(boton300)
+                            boton300.classList.add("animate__backInUp")
+                            boton300.classList.add("boton300")
+                            boton300.innerText="300"
+                            botonFlexContainer.appendChild(botonSiguientejugador)
+                            botonSiguientejugador.classList.add("animate__backInUp")
+                            botonSiguientejugador.classList.add("botonRegistrarPuntaje")
+                            botonSiguientejugador.innerHTML = "Siguiente Jugador" 
 
-                                blurJuego = document.createElement("div")
-                                blurJuego.classList.add("blurJuego")
-                                document.body.appendChild(blurJuego)
-
-                                blurJuego.appendChild(mensajeJuego)
-                                mensajeJuego.classList.add("animate__backInUp")
-                                mensajeJuego.classList.add("mensaje_juego")
-                                mensajeJuego.innerHTML = `${items[turno]} juega`
-                                console.log(jugadoresAgregados)
-
-                                blurJuego.appendChild(mensaje_juegoRegistoPuntos)
-                                mensaje_juegoRegistoPuntos.classList.add("animate__backInDown")
-                                mensaje_juegoRegistoPuntos.classList.add("mensaje_juegoRegistoPuntos")
-                                mensaje_juegoRegistoPuntos.innerHTML = "Regista los puntos recolectados presionando en los siguientes botones: "
-
-                                blurJuego.appendChild(botonFlexContainer)
-                                botonFlexContainer.classList.add("animate__backInUp")
-                                botonFlexContainer.classList.add("botonFlexContainer")
-                                
-                                botonFlexContainer.appendChild(boton30)
-                                boton30.classList.add("animate__backInUp")
-                                boton30.classList.add("boton30")
-                                boton30.innerText="30"
-
-                                botonFlexContainer.appendChild(boton40)
-                                boton40.classList.add("animate__backInUp")
-                                boton40.classList.add("boton30")
-                                boton40.innerText="40"
-                                
-                                botonFlexContainer.appendChild(boton50)
-                                boton50.classList.add("animate__backInUp")
-                                boton50.classList.add("boton30")
-                                boton50.innerText="50"
-
-                                botonFlexContainer.appendChild(boton150)
-                                boton150.classList.add("animate__backInUp")
-                                boton150.classList.add("boton30")
-                                boton150.innerText="150"
-
-                                botonFlexContainer.appendChild(boton200)
-                                boton200.classList.add("animate__backInUp")
-                                boton200.classList.add("boton30")
-                                boton200.innerText="200"
-
-                                botonFlexContainer.appendChild(boton300)
-                                boton300.classList.add("animate__backInUp")
-                                boton300.classList.add("boton30")
-                                boton300.innerText="300"
-
-                                botonFlexContainer.appendChild(botonRegistrarPuntaje)
-                                botonRegistrarPuntaje.classList.add("animate__backInUp")
-                                botonRegistrarPuntaje.classList.add("botonRegistrarPuntaje")
-                                botonRegistrarPuntaje.innerHTML="Registar puntaje"
-
-                                botonFlexContainer.appendChild(botonSiguientejugador)
-                                botonSiguientejugador.classList.add("animate__backInUp")
-                                botonSiguientejugador.classList.add("botonRegistrarPuntaje")
-                                botonSiguientejugador.innerHTML = "Siguiente Jugador"
-
-                                botonSiguientejugador.addEventListener("click",()=>{
-                                    mensajeJuego.classList.replace("animate__backInUp","animate__backOutRight")
-                                    
-                                    setTimeout(()=>{
-                                        turno +=1
-                                        console.log(turno)
-                                        console.log(items)
-                                        mensajeJuego.classList.replace("animate__backOutRight","animate__backInLeft")
-                                        mensajeJuego.innerHTML = `${items[turno]} juega`
-                                    },250)
-                                })
-                                // do{
-
-                                //     // al presionar boton, poner terminado en true y sumar 1 al turno
-                                // }
-                                // while(terminado == true)
-
-                                
-                            }
+                            
                         }
-                        console.log(items)
+                        }
+
+                        var puntaje = []
+                        document.body.appendChild(flexContainerAbajo)
+                        flexContainerAbajo.classList.add("flexContainerAbajo")
+
+                        h2Rondas = document.createElement("h2")
+                        h2Rondas.classList.add("h2Rondas")
+                        botonFlexContainer.appendChild(h2Rondas)
+                        h2Rondas.innerHTML = "Ronda 1"
+
+                        
+                        
+
+                        
+                        for (i=0; i<resultado; i++){
+                            puntaje.push(0)
+                            
+                            cuadroJugadores = document.createElement("div")
+                            flexContainerAbajo.appendChild(cuadroJugadores)
+                            cuadroJugadores.classList.add("cuadroJugadores")
+                            cuadroJugadores.classList.add("animate__backInDown")
+
+                            
+                            h3CuadrosJugadores = document.createElement("h3")
+                            h3CuadrosJugadores.classList.add("h3CuadrosJugadores")
+                            h3CuadrosJugadores.classList.add(`numero_${i}`)
+                            cuadroJugadores.appendChild(h3CuadrosJugadores)
+                            h3CuadrosJugadores.innerHTML = `<b> ${items[i]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+                        }
+                        let ronda = 2
+                        botonSiguientejugador.addEventListener("click",()=>{  
+                            
+                            mensajeJuego.classList.add("animate__rubberBand") 
+                            setTimeout(()=>{
+                                mensajeJuego.classList.remove("animate__rubberBand")
+                            },700)                 
+                            if (turno == resultado-1){ 
+                                turno = 0 
+                                                    
+                                mensajeJuego.innerHTML = `${items[turno]} juega`
+                                if(turno == 0){
+                                    h2Rondas.innerHTML = `Ronda ${ronda}`
+                                    ronda +=1  
+                                }
+                                
+                                
+                            } else{
+                                turno +=1                           
+                                mensajeJuego.innerHTML = `${items[turno]} juega`   
+                            }                  
+                        })
+                        
+                        boton30.addEventListener("click",()=>{
+                            puntaje[turno] += 30 
+                            console.log(puntaje)
+                            console.log(items)
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
+                            }
+                        })
+                        boton40.addEventListener("click",()=>{
+                            puntaje[turno] += 40 
+                            console.log(puntaje)
+                            console.log(items)
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
+                        })
+                        boton50.addEventListener("click",()=>{
+                            puntaje[turno] += 50 
+                            console.log(puntaje)
+                            console.log(items)
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
+                        })
+                        boton150.addEventListener("click",()=>{
+                            puntaje[turno] += 150 
+                            console.log(puntaje)
+                            console.log(items)
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
+                        })
+                        boton200.addEventListener("click",()=>{
+                            puntaje[turno] += 200 
+                            console.log(puntaje)
+                            console.log(items)
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
+                        })
+                        boton300.addEventListener("click",()=>{
+                            puntaje[turno] += 300 
+                            console.log(puntaje)
+                            console.log(items)
+                            
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
+                        })  
                     })           
                 },800)
                 } else if(resultado >= 4 && resultado <= 9){
