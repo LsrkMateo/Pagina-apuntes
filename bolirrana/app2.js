@@ -441,7 +441,7 @@ botonIndividual.addEventListener("click",()=>{
                         }
                         
                         var turno = 0
-                        var puntaje = 0
+                        var puntaje = []
                         document.body.appendChild(flexContainerAbajo)
                         flexContainerAbajo.classList.add("flexContainerAbajo")
 
@@ -455,6 +455,7 @@ botonIndividual.addEventListener("click",()=>{
 
                         
                         for (i=0; i<resultado; i++){
+                            puntaje.push(0)
                             
                             cuadroJugadores = document.createElement("div")
                             flexContainerAbajo.appendChild(cuadroJugadores)
@@ -462,8 +463,9 @@ botonIndividual.addEventListener("click",()=>{
 
                             h3CuadrosJugadores = document.createElement("h3")
                             h3CuadrosJugadores.classList.add("h3CuadrosJugadores")
+                            h3CuadrosJugadores.classList.add(`numero_${i}`)
                             cuadroJugadores.appendChild(h3CuadrosJugadores)
-                            h3CuadrosJugadores.innerHTML = `<b> ${items[i]}: </b> <br> Tiene: ${puntaje} puntos <br> le faltan ${input_puntos.value - puntaje} puntos`
+                            h3CuadrosJugadores.innerHTML = `<b> ${items[i]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         }
                         botonSiguientejugador.addEventListener("click",()=>{                        
                             if (turno == resultado-1){ 
@@ -472,15 +474,15 @@ botonIndividual.addEventListener("click",()=>{
                             } else{
                                 turno +=1                           
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
-                                
+                    
                             }                  
                         })
 
                         boton30.addEventListener("click",()=>{
-                            puntaje += 30 
+                            puntaje[turno] += 30 
                             console.log(puntaje)
                             console.log(items)
-                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje} puntos | Le faltan ${input_puntos.value - puntaje} puntos para ganar`
+                            mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                         })
                         boton40.addEventListener("click",()=>{
                             puntaje += 40 
