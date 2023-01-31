@@ -490,7 +490,7 @@ botonIndividual.addEventListener("click",()=>{
                                 mensajeJuego.innerHTML = `${items[turno]} juega`   
                             }                  
                         })
-
+                        
                         boton30.addEventListener("click",()=>{
                             puntaje[turno] += 30 
                             console.log(puntaje)
@@ -498,6 +498,14 @@ botonIndividual.addEventListener("click",()=>{
                             
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
+                            }
                         })
                         boton40.addEventListener("click",()=>{
                             puntaje[turno] += 40 
@@ -506,6 +514,14 @@ botonIndividual.addEventListener("click",()=>{
                             
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
                         })
                         boton50.addEventListener("click",()=>{
                             puntaje[turno] += 50 
@@ -514,6 +530,14 @@ botonIndividual.addEventListener("click",()=>{
                             
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
                         })
                         boton150.addEventListener("click",()=>{
                             puntaje[turno] += 150 
@@ -522,6 +546,14 @@ botonIndividual.addEventListener("click",()=>{
                             
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
                         })
                         boton200.addEventListener("click",()=>{
                             puntaje[turno] += 200 
@@ -530,6 +562,14 @@ botonIndividual.addEventListener("click",()=>{
                             
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
                         })
                         boton300.addEventListener("click",()=>{
                             puntaje[turno] += 300 
@@ -538,10 +578,15 @@ botonIndividual.addEventListener("click",()=>{
                             
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
-                        })
-                        
-                        
-                        console.log(items)
+
+                            if (puntaje[turno] >= input_puntos.value){
+                                modalGanador = document.createElement("div")
+                                blurJuego.appendChild(modalGanador)
+                                modalGanador.classList.add("animate__backInDown")
+                                modalGanador.classList.add("modalGanador")
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                            }
+                        })  
                     })           
                 },800)
                 } else if(resultado >= 4 && resultado <= 9){
