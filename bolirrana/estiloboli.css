@@ -140,6 +140,11 @@ a:visited{
     animation-duration: .7s;
     animation-fill-mode: forwards;
 }
+.animate__rubberBand{
+    animation: rubberBand;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+}
 .boton_casual{
     min-width:30vw;
     background-color: rgb(255, 255, 255);
@@ -766,11 +771,10 @@ a:visited{
     background-color: rgba(255, 255, 255, 0.262);
     min-width:100px;
     margin: 20px 10px;
-    padding: 8%;
+    padding: 5%;
     text-align: center;
     line-height: 40px;
     letter-spacing: 1px;
-    min-height: 300px;
     position: relative;
     border-radius: 5px;
     border: 2px solid black;

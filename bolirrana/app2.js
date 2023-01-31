@@ -468,11 +468,22 @@ botonIndividual.addEventListener("click",()=>{
                             cuadroJugadores.appendChild(h3CuadrosJugadores)
                             h3CuadrosJugadores.innerHTML = `<b> ${items[i]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         }
+                        let ronda = 2
                         botonSiguientejugador.addEventListener("click",()=>{  
-                                                
+                            
+                            mensajeJuego.classList.add("animate__rubberBand") 
+                            setTimeout(()=>{
+                                mensajeJuego.classList.remove("animate__rubberBand")
+                            },700)                 
                             if (turno == resultado-1){ 
-                                turno = 0                       
+                                turno = 0 
+                                                    
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
+                                if(turno == 0){
+                                    h2Rondas.innerHTML = `Ronda ${ronda}`
+                                    ronda +=1  
+                                }
+                                
                                 
                             } else{
                                 turno +=1                           
