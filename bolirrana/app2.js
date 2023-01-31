@@ -330,7 +330,7 @@ botonIndividual.addEventListener("click",()=>{
                 h3_mensaje_puntso.classList.add("h3_mensaje_puntso")
                 h3_mensaje_puntso.innerHTML = `Escribe el numero de puntos a jugar, el jugador que primero alcanze la meta de puntos gana`
                 
-                if(input_puntos)
+                
 
                 var items = []
 
@@ -381,7 +381,7 @@ botonIndividual.addEventListener("click",()=>{
                                 var nombresBien = true
                             }
                         if(nombresBien == true && puntajeBien == true){
-                            turno = 0
+                            var turno = 0
                             items.push(jugador.value)
                             
 
@@ -439,8 +439,7 @@ botonIndividual.addEventListener("click",()=>{
                             
                         }
                         }
-                        
-                        var turno = 0
+
                         var puntaje = []
                         document.body.appendChild(flexContainerAbajo)
                         flexContainerAbajo.classList.add("flexContainerAbajo")
@@ -471,10 +470,11 @@ botonIndividual.addEventListener("click",()=>{
                             if (turno == resultado-1){ 
                                 turno = 0                       
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
+                            
                             } else{
                                 turno +=1                           
-                                mensajeJuego.innerHTML = `${items[turno]} juega`
-                    
+                                mensajeJuego.innerHTML = `${items[turno]} juega` 
+                                                                                        
                             }                  
                         })
 
@@ -482,7 +482,9 @@ botonIndividual.addEventListener("click",()=>{
                             puntaje[turno] += 30 
                             console.log(puntaje)
                             console.log(items)
+                            
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
+                            document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         })
                         boton40.addEventListener("click",()=>{
                             puntaje += 40 
