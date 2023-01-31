@@ -393,7 +393,7 @@ botonIndividual.addEventListener("click",()=>{
                             blurJuego.classList.add("blurJuego")
                             document.body.appendChild(blurJuego)
                             blurJuego.appendChild(mensajeJuego)
-                            mensajeJuego.classList.add("animate__backInUp")
+                            
                             mensajeJuego.classList.add("mensaje_juego")
                             mensajeJuego.innerHTML = `${items[turno]} juega`
                             
@@ -459,6 +459,7 @@ botonIndividual.addEventListener("click",()=>{
                             cuadroJugadores = document.createElement("div")
                             flexContainerAbajo.appendChild(cuadroJugadores)
                             cuadroJugadores.classList.add("cuadroJugadores")
+                            cuadroJugadores.classList.add("animate__backInDown")
 
                             
                             h3CuadrosJugadores = document.createElement("h3")
@@ -467,15 +468,15 @@ botonIndividual.addEventListener("click",()=>{
                             cuadroJugadores.appendChild(h3CuadrosJugadores)
                             h3CuadrosJugadores.innerHTML = `<b> ${items[i]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
                         }
-                        botonSiguientejugador.addEventListener("click",()=>{                        
+                        botonSiguientejugador.addEventListener("click",()=>{  
+                                                
                             if (turno == resultado-1){ 
                                 turno = 0                       
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
-                            
+                                
                             } else{
                                 turno +=1                           
-                                mensajeJuego.innerHTML = `${items[turno]} juega` 
-                                                                                        
+                                mensajeJuego.innerHTML = `${items[turno]} juega`   
                             }                  
                         })
 
