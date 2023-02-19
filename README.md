@@ -1,4 +1,4 @@
-# Pagina-apuntes
+# Pagina-apuntess
 ---
 #### Esta pagina esta hecha para colocar mis apuntes aprendizaje hacia el desarrollo front end.
 Esto con el fin de poner en practica mis conocimientos en html css y javascript.
