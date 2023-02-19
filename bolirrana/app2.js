@@ -88,6 +88,8 @@ const botonSiguientejugador = document.createElement("button")
 
 const flexContainerAbajo = document.createElement("div")
 
+const botonJugarDeNuevo = document.createElement("button")
+
 // Boton introduccion:
 
 boton.addEventListener("click",()=>{
@@ -476,15 +478,12 @@ botonIndividual.addEventListener("click",()=>{
                                 mensajeJuego.classList.remove("animate__rubberBand")
                             },700)                 
                             if (turno == resultado-1){ 
-                                turno = 0 
-                                                    
+                                turno = 0                      
                                 mensajeJuego.innerHTML = `${items[turno]} juega`
                                 if(turno == 0){
                                     h2Rondas.innerHTML = `Ronda ${ronda}`
                                     ronda +=1  
-                                }
-                                
-                                
+                                }            
                             } else{
                                 turno +=1                           
                                 mensajeJuego.innerHTML = `${items[turno]} juega`   
@@ -504,7 +503,7 @@ botonIndividual.addEventListener("click",()=>{
                                 blurJuego.appendChild(modalGanador)
                                 modalGanador.classList.add("animate__backInDown")
                                 modalGanador.classList.add("modalGanador")
-                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`                               
                             }
                         })
                         boton40.addEventListener("click",()=>{
@@ -514,13 +513,13 @@ botonIndividual.addEventListener("click",()=>{
                             
                             mensajeJuego.innerHTML = `${items[turno]} juega | Tiene ${puntaje[turno]} puntos | Le faltan ${input_puntos.value - puntaje[turno]} puntos para ganar`
                             document.querySelector(`body > div.flexContainerAbajo > div:nth-child(${turno+1}) > h3`).innerHTML = `<b> ${items[turno]}: </b> <br> Tiene: ${puntaje[turno]} puntos <br> le faltan ${input_puntos.value - puntaje[turno]} puntos`
-
+             
                             if (puntaje[turno] >= input_puntos.value){
                                 modalGanador = document.createElement("div")
                                 blurJuego.appendChild(modalGanador)
                                 modalGanador.classList.add("animate__backInDown")
                                 modalGanador.classList.add("modalGanador")
-                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
                             }
                         })
                         boton50.addEventListener("click",()=>{
@@ -536,7 +535,7 @@ botonIndividual.addEventListener("click",()=>{
                                 blurJuego.appendChild(modalGanador)
                                 modalGanador.classList.add("animate__backInDown")
                                 modalGanador.classList.add("modalGanador")
-                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
                             }
                         })
                         boton150.addEventListener("click",()=>{
@@ -552,7 +551,7 @@ botonIndividual.addEventListener("click",()=>{
                                 blurJuego.appendChild(modalGanador)
                                 modalGanador.classList.add("animate__backInDown")
                                 modalGanador.classList.add("modalGanador")
-                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
                             }
                         })
                         boton200.addEventListener("click",()=>{
@@ -568,7 +567,7 @@ botonIndividual.addEventListener("click",()=>{
                                 blurJuego.appendChild(modalGanador)
                                 modalGanador.classList.add("animate__backInDown")
                                 modalGanador.classList.add("modalGanador")
-                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
                             }
                         })
                         boton300.addEventListener("click",()=>{
@@ -584,7 +583,7 @@ botonIndividual.addEventListener("click",()=>{
                                 blurJuego.appendChild(modalGanador)
                                 modalGanador.classList.add("animate__backInDown")
                                 modalGanador.classList.add("modalGanador")
-                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda}° ronda`
+                                modalGanador.innerHTML = `🏆 ${items[turno]} es el ganador 🏆 <br> Felicitaciones :D <br> Ganaste en la ${ronda-1}° ronda`
                             }
                         })  
                     })           
